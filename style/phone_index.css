@@ -1,0 +1,160 @@
+@media only screen and (max-width: 800px) and (min-width: 200px) {
+
+/*** Principal ***/
+:root {
+    --font-size-normal: 1.1rem;
+    --font-size-logo: 1.2rem;
+    --font-size-tres-gros-titre: 1.05rem;
+    --font-size-gros-titre: 1.4em;
+    --font-size-titre: 1.2rem;
+    --font-size-petit-icon: 1.1rem;
+    --font-size-moyen-icon: 1.5rem;
+}
+/*** En-tête ***/
+body > header {
+    padding: 1rem 5vw;
+}
+.logo {
+    font-family: var(--font-family-logo);
+    font-size: var(--font-size-logo);
+}
+body header #opener {
+    display: block;
+}
+body header #opener .opener-bar{
+    position: relative;
+    background-color: var(--color-main);
+    width: 1.5rem;
+    height: 0.1rem;
+}
+body header #opener .opener-bar:nth-of-type(2) {
+    margin-top: .3rem;
+}
+
+/* Navigation */
+nav {
+    position: absolute;
+    width: 0%;
+    max-width: unset;
+    min-width: unset;
+    background-color: var(--bg-color-main);
+}
+nav ul {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: space-between;
+    z-index: 100;
+}
+nav ul li {
+    position: relative;
+    font-size: var(--font-size-normal);
+    list-style-type: none;
+    width: 100%;
+}
+nav .onSection {
+    font-weight: bold;
+}
+nav ul #barre {
+    position: absolute;
+    top: 103%;
+    left: 0;
+    width: 0;
+    height: .1rem;
+    background-color: white;
+    transition: .3s;
+}
+/*** Sections ***/
+section {
+    position: relative;
+    padding: 0 5vw;
+    z-index: 5;
+}
+.section-defilement {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: var(--bg-color-secondary);
+}
+.section-defilement header {
+    position: relative;
+    height: 4.5rem;
+}
+/* Section 1*/
+#sect1 article {
+    position: absolute;
+    width: 90vw;
+}
+#sect1 article .desc-moi {
+    position: absolute;
+    margin-right: 0;
+    left: 0;
+    top: 75%;
+    transform: translateY(-75%);
+    z-index: 2;
+}
+#sect1 article .desc-moi h1 span {
+    position: relative;
+}
+#sect1 article .desc-moi h1 span::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+    height: 50%;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--bg-color-main);
+}
+#sect1 article h1 {
+    margin-top: 0;
+}
+#sect1 article .img-moi {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+#sect1 article .img-moi img {
+    width: 100%;
+    height: auto;
+}
+#sect1 footer {
+    top: 85%;
+}
+#sect1 footer > div {
+    width: 50%;
+}
+#sect1 footer > div:nth-child(1) {
+    margin-left: -3rem;
+}
+#sect1 footer > div > img {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+/* Section 2 */
+#sect2 .presentation div {
+    width: 100%;
+    margin-top: 1.4em;
+}
+#sect2 .presentation div p:not(#sect2 .presentation div p:last-of-type) {
+    padding-bottom: .3rem;
+}
+
+/*** Pied de page ***/
+body > footer {
+    min-height: 120vh;
+}
+
+/* Autre classe */
+.color-main {
+    color: var(--color-main);
+}
+.color-secondary {
+    color: var(--color-secondary);
+}
+
+}
+
+

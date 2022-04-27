@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio - Robin Chausson</title>
+        <link rel="stylesheet" href="style/index.css"/>
+        <link rel="stylesheet" href="style/tablet_index.css"/>
+        <link rel="stylesheet" href="style/phone_index.css"/>
+        <link rel="icon" type="image/png" href="" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Découvrez qui est Robin Chausson à travers son Portfolio.">
+        <meta property="og:title" content="Portfolio - Robin Chausson" >
+        <meta property="og:type" content="siteweb" >
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="Découvrez qui est Robin Chausson à travers son Portfolio." />
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- En-tête -->
+        <header>
+            <div id="opener">
+                <div class="opener-bar"></div>
+                <div class="opener-bar"></div>
+            </div>
+            <div><a href="#sect1"class="logo">RC</a></div>
+            <nav>
+                <ul>
+                    <li class="onSection"><a href="#sect1">Accueil</a></li>
+                    <li><a href="#sect2">À propos</a></li>
+                    <li><a href="#sect3">Compétences</a></li>
+                    <li><a href="#sect4">Contact</a></li>
+                    <!-- <div id="barre"></div> -->
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Corps -->
+        <section id="sect1">
+            <article>
+                <div data-aos="fade-right" class="desc-moi">
+                    <h1><span>ROBIN</span> <br> <span>CHAUSSON</span></h1>
+                    <h2><span>Développeur Web Junior</span></h2>
+                </div>
+                <div data-aos="fade-left" class="img-moi">
+                    <img src="assets/img/shox.webp">
+                </div>
+            </article>
+            <div class="en-savoir-plus">
+                <a href="#sect2">
+                    <p>En savoir plus</p>
+                    <div class="fleches">
+                        <div class="fleche fleche1"><ion-icon name="chevron-down-sharp"></ion-icon></div>
+                        <div class="fleche fleche2"><ion-icon name="chevron-down-sharp"></ion-icon></div>
+                    </div>
+                </a>
+            </div>
+            <footer>
+                <div><img src="assets/img/particule.png" alt="particule noir en mouvement"></div>
+                <div><img src="assets/img/particule1.png" alt="particule noir en mouvement"></div>
+            </footer>
+        </section>
+
+        <section id="sect2"class="section-defilement">
+            <header>
+                <h1>À propos</h1>
+                <div class="fond"></div>
+            </header>
+            <article class="presentation">
+                <div class="presentation-info" data-aos="fade-right"data-aos-duration="600">
+                    <p><strong>Nom :</strong> Chausson</p>
+                    <p><strong>Prénom :</strong> Robin</p>
+                    <p><strong>Âge :</strong> 18</p>
+                    <p><strong>Status :</strong> Lycéen (Terminale)</p>
+                    <p><strong>Localisation :</strong> Orléans</p>
+                </div>
+                <div class="presentation-desc" data-aos="fade-right"data-aos-duration="600">
+                    <p><strong>En quelques mots</strong></p>
+                    <p>
+                        Je suis un jeune passioné d'informatique qui passe son temps libre
+                        à développer tout type de programme.
+                    </p>
+                    <p>
+                        Au fil de mes apprentissages, je me suis spécialisé
+                        dans le développement web.
+                    </p>
+                </div>
+            </article>
+            <article class="qualites">
+                <p><strong>Qualités</strong></p>
+                <div class="box-qualites">
+                    <div id="qualite1" class="qualite">
+                        <div>
+                            <ion-icon name="eye-outline"></ion-icon>
+                            <h3>Curieux</h3>
+                        </div>
+                    </div>
+                    <div id="qualite-bar1"class="qualite-bar"></div>
+                    <div id="qualite2" class="qualite">
+                        <div>
+                            <ion-icon name="ear-outline"></ion-icon>
+                            <h3>Attentif</h3>
+                        </div>
+                    </div>
+                    <div id="qualite-bar2"class="qualite-bar"></div>
+                    <div id="qualite3" class="qualite">
+                        <div>
+                            <ion-icon name="search-outline"></ion-icon>
+                            <h3>Analyste</h3>
+                        </div>
+                    </div>
+                    <div id="qualite-bar3"class="qualite-bar"></div>
+                    <div id="qualite4" class="qualite">
+                        <div>
+                            <ion-icon name="time-outline"></ion-icon>
+                            <h3>Patient</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div id="elt"></div>
+
+        <section id="sect3" class="section-defilement">
+            <header>
+                <h1>Compétences</h1>
+                <div class="fond"></div>
+            </header>
+        </section>
+            
+        <section id="sect4" class="section-defilement">
+            <header>
+                <h1>Contact</h1>
+                <div class="fond"></div>
+            </header>
+        </section>
+
+        <!-- Pied de page -->
+        <footer>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="js/index.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <noscript>
+            <p>Votre navigateur ne permet pas de charger le JavaScript.</p>
+        </noscript>
+    </body>
+</html>
