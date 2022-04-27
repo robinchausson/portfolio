@@ -14,13 +14,13 @@
     --font-family-main: 'inconsolata',Helvetica,Arial;
     --font-family-logo: 'grandissimo',Helvetica,Arial;
 
-    --font-size-normal: 1.2rem;
-    --font-size-logo: 1.3rem;
-    --font-size-tres-gros-titre: 2rem;
-    --font-size-gros-titre: 1.6em;
-    --font-size-titre: 1.5rem;
-    --font-size-petit-icon: 1.2rem;
-    --font-size-moyen-icon: 1.6rem;
+    --font-size-normal: 1.1rem;
+    --font-size-logo: 1.2rem;
+    --font-size-tres-gros-titre: 1.6rem;
+    --font-size-gros-titre: 1.65em;
+    --font-size-titre: 1.4rem;
+    --font-size-petit-icon: 1.1rem;
+    --font-size-moyen-icon: 1.5rem;
 
     --color-main: white;
     --color-secondary: rgb(190,190,190);
@@ -126,13 +126,13 @@ section {
     z-index: 5;
 }
 .section-defilement {
-    padding-top: 2.8rem;
+    padding-top: 2.7rem;
     padding-bottom: 2.5rem;
     background-color: var(--bg-color-secondary);
 }
 .section-defilement header {
     position: relative;
-    height: 5.7rem;
+    height: 5rem;
 }
 .section-defilement header .fond {
     position: absolute;
@@ -279,10 +279,10 @@ section {
 }
 #sect2  .qualites {
     position: relative;
-    margin-top: 4rem;
+    margin-top: 3.3rem;
 }
 #sect2 .qualites p {
-    margin-bottom: 2.3rem;
+    margin-bottom: 2rem;
 }
 #sect2 .box-qualites {
     position: relative;
@@ -297,8 +297,8 @@ section {
     text-align: center;
     opacity: 0;
     transform: translateY(20%);
-    height: 9.3rem;
-    width: 9.3rem;
+    height: 7.7rem;
+    width: 7.7rem;
     border-radius: 50rem;
     background-color: var(--color-main);
 }
