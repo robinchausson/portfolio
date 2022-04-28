@@ -20,7 +20,7 @@
     --font-size-gros-titre: 1.65em;
     --font-size-titre: 1.4rem;
     --font-size-petit-icon: 1.1rem;
-    --font-size-moyen-icon: 1.5rem;
+    --font-size-moyen-icon: 1.3rem;
 
     --color-main: white;
     --color-secondary: rgb(190,190,190);
@@ -33,6 +33,7 @@
     color: white;
     font-family: var(--font-family-main);
     font-size: var(--font-size-normal);
+    font-weight: 400;
 }
 html, body {
     background-color: var(--bg-color-main);
@@ -43,6 +44,7 @@ a {
     text-decoration: none;
     color: inherit;
     overflow-anchor: none;
+    font-weight: inherit;
 }
 h1 {
     text-transform: uppercase;
@@ -106,7 +108,7 @@ nav ul li {
     list-style-type: none;
 }
 nav .onSection {
-    font-weight: bold;
+    font-weight: 800!important;
 }
 nav ul #barre {
     position: absolute;
@@ -151,6 +153,7 @@ section {
     font-family: var(--font-family-main);
     font-size: var(--font-size-gros-titre);
     color: var(--bg-color-secondary);
+    font-weight: 600;
 }
 @keyframes fullHeight {
     from {
@@ -209,13 +212,13 @@ section {
     position: absolute;
     z-index: 2;
     text-align: center;
-    top: 92%;
+    top: 94%;
     left: 50%;
-    transform: translate(-50%,-92%);
+    transform: translate(-50%,-94%);
 }
 #sect1 .fleches {
     position: relative;
-    margin-top: .2rem;
+    margin-top: .05rem;
 }
 #sect1 .fleches .fleche{
     position: absolute;
@@ -230,7 +233,7 @@ section {
 }
 #sect1 .fleche2 {
     animation: fleche 3s .2s infinite;
-    top: .8rem;
+    top: .55rem;
 }
 @keyframes fleche {
     20%, 85% { 
@@ -270,16 +273,28 @@ section {
     width: 45%;
     margin-top: 1.8em;
 }
-#sect2 p {
-    padding-left: 1rem;
+#sect2 p, #sect2 h3 {
+    padding-left: .6rem;
     border-left: .05rem solid var(--color-main);
+}
+#sect2 p {
+    font-weight: 400;
+}
+#sect2 p:first-of-type {
+    padding-top: .7rem;
+}
+#sect2 h3 {
+    font-weight: 900;
+}
+#sect2 strong {
+    font-weight: 700;
 }
 #sect2 .presentation div p:not(#sect2 .presentation div p:last-of-type) {
     padding-bottom: .5rem;
 }
-#sect2  .qualites {
+#sect2 .qualites {
     position: relative;
-    margin-top: 3.3rem;
+    margin-top: 2.1rem;
 }
 #sect2 .qualites p {
     margin-bottom: 2rem;
@@ -288,6 +303,7 @@ section {
     position: relative;
     width: 100%;
     margin: 0 auto;
+    margin-top: 1.4rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -317,8 +333,9 @@ section {
     left: 50%;
     transform: translate(-50%,-50%);
 }
-#sect2 .qualites .qualite ion-icon, #sect2 .qualites .qualite h3 {
+#sect2 .qualites .qualite ion-icon, #sect2 .qualites .qualite h4 {
     color: var(--bg-color-main);
+    font-weight: 600;
 }
 #sect2 .qualites .qualite ion-icon {
     font-size: var(--font-size-moyen-icon);
