@@ -46,7 +46,6 @@ $(document).ready(function() {
     let screenHeight = $(window).innerHeight();
 
     // Code principal
-    // On ajuste la taille de la première section à
     $('#opener').click(function() {
         openNav()
     })
