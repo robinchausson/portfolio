@@ -10,7 +10,8 @@
 }
 /*** En-tête ***/
 body > header {
-    padding: 1rem 5vw;
+    padding: .6rem 7vw;
+    width: 86vw;
 }
 .logo {
     font-family: var(--font-family-logo);
@@ -18,12 +19,15 @@ body > header {
 }
 body header #opener {
     display: block;
+    z-index: 99;
+    padding: 1rem 1rem 1rem 0;
 }
 body header #opener .opener-bar{
     position: relative;
     background-color: var(--color-main);
     width: 1.5rem;
     height: 0.1rem;
+    transition: .3s;
 }
 body header #opener .opener-bar:nth-of-type(2) {
     margin-top: .3rem;
@@ -32,16 +36,24 @@ body header #opener .opener-bar:nth-of-type(2) {
 /* Navigation */
 nav {
     position: absolute;
-    width: 0%;
+    width:0;
+    left: 0;
+    top: 0;
+    height: 100vh;
     max-width: unset;
     min-width: unset;
+    overflow: hidden;
     background-color: var(--bg-color-main);
+    transition: .3s;
+    border-right: .05rem solid transparent;
 }
 nav ul {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 22%;
+    margin-left: 7vw;
+    top: 21%;
     justify-content: space-between;
     z-index: 100;
 }
@@ -50,6 +62,7 @@ nav ul li {
     font-size: var(--font-size-normal);
     list-style-type: none;
     width: 100%;
+    white-space: nowrap;
 }
 nav .onSection {
     font-weight: bold;
@@ -66,7 +79,7 @@ nav ul #barre {
 /*** Sections ***/
 section {
     position: relative;
-    padding: 0 5vw;
+    padding: 0 7vw;
     z-index: 5;
 }
 .section-defilement {

@@ -21,7 +21,24 @@ $(document).ready(function() {
         $("#sect1 footer").css('top',heightFromTopParticules-$(document).scrollTop()*0.15+"px")
     }
     function openNav() {
-        $('nav').css({'width':'80%'})
+        $('html,body').css({'overflow':'hidden'})
+        $('nav').css({'width':'50%','border-color':'white'})
+        $('header').css('border-color','transparent')
+        $('header .opener-bar1').css({'transform':'rotate(-45deg)','top':'.2rem'})
+        $('header .opener-bar2').css({'transform':'rotate(45deg)','top':'-.2rem'})
+    }
+    function closeNav() {
+        $('html,body').css({'overflow':'visible'})
+        $('nav').css({'width':'0%','border-color':'transparent'})
+        $('header').css('border-color','white')
+        $('header .opener-bar1').css({'transform':'rotate(0deg)','top':'0'})
+        $('header .opener-bar2').css({'transform':'rotate(0deg)','top':'0'})
+    }
+    function isOpenNav() {
+        if ($('nav').width() > 0){
+            return true
+        }
+        return false
     }
 
     // Variables
@@ -46,8 +63,20 @@ $(document).ready(function() {
     let screenHeight = $(document).height();
 
     // Code principal
+    // Click en dehors
+    $(document).click(function(e) {
+        if (isOpenNav()) {
+            closeNav()
+        }
+    })
+    // Ouvrir le header
     $('#opener').click(function() {
-        openNav()
+        if (isOpenNav()) {
+            closeNav()
+        }
+        else {
+            openNav()
+        }
     })
     // Permet de ne pas afficher les ancres
     $("a[href*='#']:not([href='#'])").click(function(event) {
@@ -68,7 +97,15 @@ $(document).ready(function() {
         fixParticules()
         var st = $(this).scrollTop();
         // Lancer les animations des titres
-        if (st > heightFromTopSect2-screenHeight/4 && st < heightFromTopSect3-screenHeight/4) {
+        if (st == 0) {
+            $('body > header').css({'border-color':'transparent'})
+            // On reset toutes les animations
+            $('.section-defilement header .fond').css('animation','none')
+            $('.section-defilement header h1').css('animation','none')
+            $('#sect2 .qualite').css('animation','none')
+            $('#sect2 .qualite-bar').css('width','0px')
+        }
+        else if (st > heightFromTopSect2-screenHeight/4 && st < heightFromTopSect3-screenHeight/4) {
             $('#sect2 header .fond').css('animation','fullHeight .4s .3s forwards')
             $('#sect2 header h1').css('animation','titleToLeft .5s 1s forwards')
         }
@@ -80,14 +117,7 @@ $(document).ready(function() {
             $('#sect4 header .fond').css('animation','fullHeight .4s .3s forwards')
             $('#sect4 header h1').css('animation','titleToLeft .5s 1s forwards')
         }
-        else {
-            $('body > header').css({'border-color':'transparent'})
-            // On reset toutes les animations
-            $('.section-defilement header .fond').css('animation','none')
-            $('.section-defilement header h1').css('animation','none')
-            $('#sect2 .qualite').css('animation','none')
-            $('#sect2 .qualite-bar').css('width','0px')
-        }
+        
 
         // Changer la navbar + animation de la section
         if (st < heightFromTopSect2-headerHeight-50) {
