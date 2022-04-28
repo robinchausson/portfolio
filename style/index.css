@@ -177,7 +177,7 @@ section {
 }
 /* Section 1*/
 #sect1 {
-    min-height: 60vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 #sect1 article {
