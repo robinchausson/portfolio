@@ -43,7 +43,7 @@ $(document).ready(function() {
     let distQualite34 = leftQualite4-leftQualite3-widthQualite
     
     let headerHeight = $('body > header').innerHeight()
-    let screenHeight = $(window).innerHeight();
+    let screenHeight = $(document).height();
 
     // Code principal
     $('#opener').click(function() {
