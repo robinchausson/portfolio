@@ -20,7 +20,7 @@
     --font-size-gros-titre: 1.65em;
     --font-size-titre: 1.4rem;
     --font-size-petit-icon: 1.1rem;
-    --font-size-moyen-icon: 1.3rem;
+    --font-size-moyen-icon: 1.4rem;
 
     --color-main: white;
     --color-secondary: rgb(190,190,190);
@@ -274,7 +274,7 @@ section {
     margin-top: 1.8em;
 }
 #sect2 p, #sect2 h3 {
-    padding-left: .6rem;
+    padding-left: .7rem;
     border-left: .05rem solid var(--color-main);
 }
 #sect2 p {
@@ -303,7 +303,6 @@ section {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    margin-top: 1.4rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -315,6 +314,7 @@ section {
     transform: translateY(20%);
     height: 7.7rem;
     width: 7.7rem;
+    margin-top: 1.4rem;
     border-radius: 50rem;
     background-color: var(--color-main);
 }

@@ -2,8 +2,6 @@
 
 /*** Principal ***/
 :root {
-    --font-size-normal: 1.1rem;
-    --font-size-logo: 1.2rem;
     --font-size-tres-gros-titre: 1.05rem;
     --font-size-gros-titre: 1.4em;
     --font-size-titre: 1.2rem;
@@ -140,6 +138,9 @@ section {
 }
 #sect2 .presentation div p:not(#sect2 .presentation div p:last-of-type) {
     padding-bottom: .3rem;
+}
+#qualite-bar2 {
+    display: none;
 }
 
 /*** Pied de page ***/

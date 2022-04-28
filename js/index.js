@@ -1,4 +1,3 @@
-
 AOS.init();
 
 $(document).ready(function() {
@@ -33,12 +32,15 @@ $(document).ready(function() {
 
     let leftQualite1 = $('#qualite1').position().left
     let leftQualite2 = $('#qualite2').position().left
+    let topQualite1 = $('#qualite1').position().top + $('#qualite1').innerHeight()/2
+    let topQualite2 = $('#qualite2').position().top + $('#qualite2').innerHeight()/2
+    let topQualite3 = $('#qualite3').position().top + $('#qualite3').innerHeight()/2
     let leftQualite3 = $('#qualite3').position().left
     let leftQualite4 = $('#qualite4').position().left
-    let distQualite12 = leftQualite2-leftQualite1 
-    let distQualite23 = leftQualite3-leftQualite2
-    let distQualite34 = leftQualite4-leftQualite3 
     let widthQualite = $('#qualite1').innerWidth()
+    let distQualite12 = leftQualite2-leftQualite1-widthQualite
+    let distQualite23 = leftQualite3-leftQualite2-widthQualite
+    let distQualite34 = leftQualite4-leftQualite3-widthQualite
     
     let headerHeight = $('body > header').innerHeight()
     let screenHeight = $(document).height();
@@ -99,13 +101,13 @@ $(document).ready(function() {
             $('#qualite4').css('animation','qualite .4s 1.2s forwards')
             // Barre pour connecter les qualités entre elles
             setTimeout(() => {
-                $('#qualite-bar1').css({'left':leftQualite1+widthQualite+'px','width':distQualite12+'px'})
+                $('#qualite-bar1').css({'left':leftQualite1+widthQualite+'px','width':distQualite12+'px','top':topQualite1+'px'})
             }, 400);
             setTimeout(() => {
-                $('#qualite-bar2').css({'left':leftQualite2+widthQualite+'px','width':distQualite23+'px'})
+                $('#qualite-bar2').css({'left':leftQualite2+widthQualite+'px','width':distQualite23+'px','top':topQualite2+'px'})
             }, 800);
             setTimeout(() => {
-                $('#qualite-bar3').css({'left':leftQualite3+widthQualite+'px','width':distQualite34+'px'})
+                $('#qualite-bar3').css({'left':leftQualite3+widthQualite+'px','width':distQualite34+'px','top':topQualite3+'px'})
             }, 1200);
         }
         else if (st >= heightFromTopSect3-headerHeight-50 && st < heightFromTopSect4-headerHeight-50) {
@@ -127,15 +129,18 @@ $(document).ready(function() {
         // Barre pour connecter les qualités entre elles
         let leftQualite1 = $('#qualite1').position().left
         let leftQualite2 = $('#qualite2').position().left
+        let topQualite1 = $('#qualite1').position().top + $('#qualite1').innerHeight()/2
+        let topQualite2 = $('#qualite2').position().top + $('#qualite2').innerHeight()/2
+        let topQualite3 = $('#qualite3').position().top + $('#qualite3').innerHeight()/2
         let leftQualite3 = $('#qualite3').position().left
         let leftQualite4 = $('#qualite4').position().left
-        let distQualite12 = leftQualite2-leftQualite1 
-        let distQualite23 = leftQualite3-leftQualite2
-        let distQualite34 = leftQualite4-leftQualite3 
         let widthQualite = $('#qualite1').innerWidth()
+        let distQualite12 = leftQualite2-leftQualite1-widthQualite
+        let distQualite23 = leftQualite3-leftQualite2-widthQualite
+        let distQualite34 = leftQualite4-leftQualite3-widthQualite
 
-        $('#qualite-bar1').css({'left':leftQualite1+widthQualite+'px','width':distQualite12+'px'})
-        $('#qualite-bar2').css({'left':leftQualite2+widthQualite+'px','width':distQualite23+'px'})
-        $('#qualite-bar3').css({'left':leftQualite3+widthQualite+'px','width':distQualite34+'px'})
+        $('#qualite-bar1').css({'left':leftQualite1+widthQualite+'px','width':distQualite12+'px','top':topQualite1+'px'})
+        $('#qualite-bar2').css({'left':leftQualite2+widthQualite+'px','width':distQualite23+'px','top':topQualite2+'px'})
+        $('#qualite-bar3').css({'left':leftQualite3+widthQualite+'px','width':distQualite34+'px','top':topQualite3+'px'})
     })
 });
