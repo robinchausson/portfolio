@@ -47,7 +47,7 @@ $(document).ready(function() {
 
     // Code principal
     // On ajuste la taille de la première section à la taille de l'écran
-    $('#sect1').css('height',screenHeight)
+    $('#sect1').css('height',screenHeight+'px')
     $('#opener').click(function() {
         openNav()
     })
