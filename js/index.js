@@ -24,9 +24,9 @@ $(document).ready(function() {
         $('html,body').css({'overflow':'hidden'})
         $('nav').css({'width':'50%','border-color':'white'})
         $('header').css('border-color','transparent')
-        $('header .opener-bar1').css({'transform':'rotate(-45deg)','top':'.42rem'})
+        $('header .opener-bar1').css({'transform':'rotate(-45deg)','top':'.43rem'})
         $('header .opener-bar2').css({'opacity':'0'})
-        $('header .opener-bar3').css({'transform':'rotate(45deg)','top':'-.42rem'})
+        $('header .opener-bar3').css({'transform':'rotate(45deg)','top':'-.43rem'})
     }
     function closeNav() {
         $('html,body').css({'overflow':'visible'})
