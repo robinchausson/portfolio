@@ -24,15 +24,17 @@ $(document).ready(function() {
         $('html,body').css({'overflow':'hidden'})
         $('nav').css({'width':'50%','border-color':'white'})
         $('header').css('border-color','transparent')
-        $('header .opener-bar1').css({'transform':'rotate(-45deg)','top':'.2rem'})
-        $('header .opener-bar2').css({'transform':'rotate(45deg)','top':'-.2rem'})
+        $('header .opener-bar1').css({'transform':'rotate(-45deg)','top':'.42rem'})
+        $('header .opener-bar2').css({'opacity':'0'})
+        $('header .opener-bar3').css({'transform':'rotate(45deg)','top':'-.42rem'})
     }
     function closeNav() {
         $('html,body').css({'overflow':'visible'})
         $('nav').css({'width':'0%','border-color':'transparent'})
         $('header').css('border-color','white')
         $('header .opener-bar1').css({'transform':'rotate(0deg)','top':'0'})
-        $('header .opener-bar2').css({'transform':'rotate(0deg)','top':'0'})
+        $('header .opener-bar2').css({'opacity':'1'})
+        $('header .opener-bar3').css({'transform':'rotate(0deg)','top':'0'})
     }
     function isOpenNav() {
         if ($('nav').width() > 0){
@@ -42,7 +44,12 @@ $(document).ready(function() {
     }
 
     // Variables
-    let heightFromTopParticules =  $("#sect1 footer").position().top
+    let headerHeight = $('body > header').innerHeight()
+    let screenHeight = $(window).height();
+    let screenWidth = $(window).width();
+    $('#sect1').css('height',screenHeight+'px')
+
+    let heightFromTopParticules =  $("#sect1 footer").offset().top
     let heightFromTopSect2 = $("#sect2").position().top
     let heightFromTopSect3 = $("#sect3").position().top
     let heightFromTopSect4 = $("#sect4").position().top
@@ -58,13 +65,10 @@ $(document).ready(function() {
     let distQualite12 = leftQualite2-leftQualite1-widthQualite
     let distQualite23 = leftQualite3-leftQualite2-widthQualite
     let distQualite34 = leftQualite4-leftQualite3-widthQualite
-    
-    let headerHeight = $('body > header').innerHeight()
-    let screenHeight = $(document).height();
 
     // Code principal
     // Click en dehors
-    $(document).click(function(e) {
+    $(document).click(function() {
         if (isOpenNav()) {
             closeNav()
         }
@@ -102,27 +106,31 @@ $(document).ready(function() {
             // On reset toutes les animations
             $('.section-defilement header .fond').css('animation','none')
             $('.section-defilement header h1').css('animation','none')
-            $('#sect2 .qualite').css('animation','none')
-            $('#sect2 .qualite-bar').css('width','0px')
         }
-        else if (st > heightFromTopSect2-screenHeight/4 && st < heightFromTopSect3-screenHeight/4) {
+        // titre section 1
+        else if (st > heightFromTopSect2-screenHeight/1.15 && st < heightFromTopSect3-screenHeight/1.15) {
             $('#sect2 header .fond').css('animation','fullHeight .4s .3s forwards')
             $('#sect2 header h1').css('animation','titleToLeft .5s 1s forwards')
         }
-        else if (st > heightFromTopSect3-screenHeight/4 && st < heightFromTopSect4-screenHeight/4) {
+        // titre section 2
+        else if (st > heightFromTopSect3-screenHeight/1.15 && st < heightFromTopSect4-screenHeight/1.15) {
             $('#sect3 header .fond').css('animation','fullHeight .4s .3s forwards')
             $('#sect3 header h1').css('animation','titleToLeft .5s 1s forwards')
         }
-        else if (st > heightFromTopSect4-screenHeight/4) {
+        // titre section 3
+        else if (st > heightFromTopSect4-screenHeight/1.15) {
             $('#sect4 header .fond').css('animation','fullHeight .4s .3s forwards')
             $('#sect4 header h1').css('animation','titleToLeft .5s 1s forwards')
         }
         
 
-        // Changer la navbar + animation de la section
+        // Section 1 -> changer la navbar + animation de la section
         if (st < heightFromTopSect2-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(1)'))
+            $('#sect2 .qualite').css('animation','none')
+            $('#sect2 .qualite-bar').css('width','0px')
         }
+        // Section 2 -> animation des qualités
         else if (st >= heightFromTopSect2-headerHeight-50 && st < heightFromTopSect3-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(2)'))
             $('#qualite1').css('animation','qualite .4s forwards')
@@ -156,21 +164,10 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        // Barre pour connecter les qualités entre elles
-        let leftQualite1 = $('#qualite1').position().left
-        let leftQualite2 = $('#qualite2').position().left
-        let topQualite1 = $('#qualite1').position().top + $('#qualite1').innerHeight()/2
-        let topQualite2 = $('#qualite2').position().top + $('#qualite2').innerHeight()/2
-        let topQualite3 = $('#qualite3').position().top + $('#qualite3').innerHeight()/2
-        let leftQualite3 = $('#qualite3').position().left
-        let leftQualite4 = $('#qualite4').position().left
-        let widthQualite = $('#qualite1').innerWidth()
-        let distQualite12 = leftQualite2-leftQualite1-widthQualite
-        let distQualite23 = leftQualite3-leftQualite2-widthQualite
-        let distQualite34 = leftQualite4-leftQualite3-widthQualite
-
-        $('#qualite-bar1').css({'left':leftQualite1+widthQualite+'px','width':distQualite12+'px','top':topQualite1+'px'})
-        $('#qualite-bar2').css({'left':leftQualite2+widthQualite+'px','width':distQualite23+'px','top':topQualite2+'px'})
-        $('#qualite-bar3').css({'left':leftQualite3+widthQualite+'px','width':distQualite34+'px','top':topQualite3+'px'})
+        let screenHeightnewRes = $(window).height();
+        let screenWidthnewRes = $(window).width();
+        if (Math.abs(screenHeight*screenWidth - screenHeightnewRes*screenWidthnewRes) > 200000) {
+            location.reload()
+        }
     })
 });
