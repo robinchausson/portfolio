@@ -8,6 +8,11 @@
     font-family: 'inconsolata';
     src: url('../assets/font/Inconsolata.ttf');
 }
+/* Font primaire */
+@font-face {
+    font-family: 'josefin';
+    src: url('../assets/font/source.ttf');
+}
 
 /*** Principal ***/
 :root {
@@ -269,13 +274,21 @@ section {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-#sect2 .presentation div {
+#sect2 .presentation > div {
     width: 45%;
     margin-top: 1.8em;
-}
-#sect2 p, #sect2 h3 {
     padding-left: .7rem;
     border-left: .05rem solid var(--color-main);
+    height: 1%;
+    overflow: hidden;
+}
+#sect2 #presentation-info-perso {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+#sect2 #presentation-info-perso div:first-of-type {
+    margin-right: 2.5rem;
 }
 #sect2 p {
     font-weight: 400;
@@ -286,70 +299,158 @@ section {
 #sect2 h3 {
     font-weight: 900;
 }
+#sect2 .competences h3 {
+    padding-left: .7rem;
+    border-left: .05rem solid var(--color-main);
+}
+#sect2 .competences {
+    position: relative;
+    margin-top: 2.5rem;
+}
 #sect2 strong {
-    font-weight: 700;
+    font-style: italic;
 }
 #sect2 .presentation div p:not(#sect2 .presentation div p:last-of-type) {
     padding-bottom: .5rem;
 }
-#sect2 .qualites {
+
+/* Graphique des compétences */
+#sect2 .table-competence{
     position: relative;
-    margin-top: 2.1rem;
-}
-#sect2 .qualites p {
-    margin-bottom: 2rem;
-}
-#sect2 .box-qualites {
-    position: relative;
+    margin-top: 1.7rem;
+    height: 20rem;
     width: 100%;
-    margin: 0 auto;
+    border-bottom: .2rem solid white;
+    border-left: .2rem solid white;
+}
+/* Pourcentage */
+#sect2 .competence-pourcentage {
+    position: absolute;
+    left: -2.5rem;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-}   
-#sect2 .qualites .qualite {
+    flex-direction: column;
+    height: 100%;
+}
+#sect2 .competence-pourcentage > div {
     position: relative;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20%);
-    height: 7.7rem;
-    width: 7.7rem;
-    margin-top: 1.4rem;
-    border-radius: 50rem;
-    background-color: var(--color-main);
+    text-align: right;
 }
-#sect2 .qualites .qualite-bar {
+#sect2 .competence-pourcentage > div::before {
     position: absolute;
+    content: '';
+    left: 120%;
     top: 50%;
-    left: 100%;
-    width: 0;
-    height: 0.15rem;
-    background-color: var(--color-main);
-    transition: width linear .4s;
+    transform: translateY(-50%);
+    width: .5rem;
+    height: .1rem;
+    background-color: white;
 }
-#sect2 .qualites .qualite div {
+/* Logo des technologies */
+#sect2 .competence-logo {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+}
+#sect2 .competence-logo > div {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+}
+#sect2 .competence-logo > div img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    max-height: 100%;
 }
-#sect2 .qualites .qualite ion-icon, #sect2 .qualites .qualite h4 {
-    color: var(--bg-color-main);
-    font-weight: 600;
+/* Niveau personnel */
+#sect2 .competences-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
 }
-#sect2 .qualites .qualite ion-icon {
-    font-size: var(--font-size-moyen-icon);
-    margin-bottom: .1rem;
+#sect2 .competences-bar > div {
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+    width: 5rem;
+    background-color: white;
+    transition: height 2s;
+    height: 0;
+    cursor: pointer;
 }
-@keyframes qualite {
-    from {
-        opacity: 0;
-        transform: translateY(20%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0%);
-    }
+#sect2 .competences-bar > div::after {
+    position: absolute;
+    left: 50%;
+    top: -2.4rem;
+    transform: translateX(-50%)scale(0.8);
+    opacity: 0;
+    background-color: white;
+    color: black;
+    padding: .3rem .5rem;
+    border-radius: .4rem;
+    transition: .2s;
+}
+#sect2 .competences-bar > div:hover::after{
+    opacity: 1;
+    top: -2.5rem;
+    transform: translateX(-50%)scale(1);
+}
+#sect2 .competences-bar > div::before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    border-right: .35rem solid transparent;
+    border-bottom: .4rem solid white;
+    border-left: .35rem solid transparent;
+    height: 0;
+    width: 0;
+    left: 50%;
+    top: -.8rem;
+    transform: translateX(-50%)rotate(180deg)scale(0.8);
+    opacity: 0;
+    transition: .2s;
+}
+#sect2 .competences-bar > div:hover::before{
+    opacity: 1;
+    top: -.8rem;
+    transform: translateX(-50%)rotate(180deg)scale(1);
+}
+/* Affectation du niveau */
+#sect2 .competence-bar-html {
+    max-height: 95%;
+}
+#sect2 .competence-bar-html::after {
+    content: '95%';
+}
+#sect2 .competence-bar-css {
+    max-height: 95%;
+}
+#sect2 .competence-bar-css::after {
+    content: '95%';
+}
+#sect2 .competence-bar-js {
+    max-height: 70%;
+}
+#sect2 .competence-bar-js::after {
+    content: '70%';
+}
+#sect2 .competence-bar-php {
+    max-height: 75%;
+}
+#sect2 .competence-bar-php::after {
+    content: '75%';
+}
+#sect2 .competence-bar-python {
+    max-height: 90%;
+}
+#sect2 .competence-bar-python::after {
+    content: '95%';
 }
 
 /*** Pied de page ***/

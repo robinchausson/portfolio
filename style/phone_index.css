@@ -145,7 +145,7 @@ section {
     opacity: 1;
 }
 /* Section 2 */
-#sect2 .presentation div {
+#sect2 .presentation > div {
     width: 100%;
     margin-top: 1.4em;
 }

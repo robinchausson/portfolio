@@ -1,0 +1,149 @@
+HTML
+
+<h3 data-aos="fade-right"data-aos-duration="600">Compétences</h3>
+                <div class="box-competence">
+                    <div class="box-left-competence">
+                        <div class="competence">
+                            <div class="img-competence"><img src="assets/img/html.png"></div>
+                            <div class="bar-competence"><div class="bar-competence-me bar-competence-me-html"></div></div>
+                            <h4>HTML</h4>
+                        </div>
+                        <div class="competence">
+                            <div class="img-competence"><img src="assets/img/css.png"></div>
+                            <div class="bar-competence"><div class="bar-competence-me bar-competence-me-css"></div></div>
+                            <h4>CSS</h4>
+                        </div>
+                        <div class="competence">
+                            <div class="img-competence"><img src="assets/img/js.png"></div>
+                            <div class="bar-competence"><div class="bar-competence-me bar-competence-me-js"></div></div>
+                            <h4>JS</h4>
+                        </div>
+                    </div>
+                    <div class="box-left-competence">
+                        <div class="competence">
+                            <div class="img-competence"><img src="assets/img/php.png"></div>
+                            <div class="bar-competence"><div class="bar-competence-me bar-competence-me-php"></div></div>
+                            <h4>PHP</h4>
+                        </div>
+                        <div class="competence">
+                            <div class="img-competence"><img src="assets/img/python.png"></div>
+                            <div class="bar-competence"><div class="bar-competence-me bar-competence-me-python"></div></div>
+                            <h4>Python</h4>
+                        </div>
+                    </div>
+
+
+CSS
+
+#sect2 .box-competence {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+#sect2 .box-competence > div {
+    width: 45%;
+}
+#sect2 .competence {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 1.7rem;
+}
+#sect2 .img-competence {
+    width: 4rem;
+    width: 4rem;
+}
+#sect2 .img-competence img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#sect2 .bar-competence {
+    position: relative;
+    border-radius: 50rem;
+    background-color: rgb(75,75,75);
+    padding: .2rem .25rem;
+    height: .7rem;
+    margin: 0 2rem;
+    width: 65%;
+}
+#sect2 .bar-competence-me {
+    position: relative;
+    background-color: white;
+    height: .6rem;
+    border-radius: 50rem;
+    cursor: pointer;
+}
+#sect2 .bar-competence-me::after {
+    position: absolute;
+    left: 100%;
+    top: -2.4rem;
+    transform: translateX(-60%)scale(0.8);
+    opacity: 0;
+    content: '';
+    background-color: white;
+    color: black;
+    padding: .3rem .5rem;
+    border-radius: .4rem;
+    transition: .2s;
+}
+#sect2 .bar-competence-me:hover::after{
+    opacity: 1;
+    top: -2.5rem;
+    transform: translateX(-60%)scale(1);
+}
+#sect2 .bar-competence-me::before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    border-right: .35rem solid transparent;
+    border-bottom: .4rem solid white;
+    border-left: .35rem solid transparent;
+    height: 0;
+    width: 0;
+    left: 100%;
+    top: -.8rem;
+    transform: translateX(-100%)rotate(180deg)scale(0.8);
+    opacity: 0;
+    transition: .2s;
+}
+#sect2 .bar-competence-me:hover::before{
+    opacity: 1;
+    top: -.8rem;
+    transform: translateX(-100%)rotate(180deg)scale(1);
+}
+
+/* Mes compétences */
+#sect2 .bar-competence-me-html {
+    width: 100%;
+}
+#sect2 .bar-competence-me-html::after {
+    content: '100%';
+}
+#sect2 .bar-competence-me-css {
+    width: 100%;
+}
+#sect2 .bar-competence-me-css::after {
+    content: '100%';
+}
+#sect2 .bar-competence-me-js {
+    width: 70%;
+}
+#sect2 .bar-competence-me-js::after {
+    content: '70%';
+}
+#sect2 .bar-competence-me-php {
+    width: 75%;
+}
+#sect2 .bar-competence-me-php::after {
+    content: '75%';
+}
+#sect2 .bar-competence-me-python {
+    width: 90%;
+}
+#sect2 .bar-competence-me-python::after {
+    content: '90%';
+}
+#sect2 .competence h4 {
+    font-size: 1.2rem;
+    width: 10%;
+}
