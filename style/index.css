@@ -279,7 +279,7 @@ section {
     width: 45%;
     margin-top: 1.8em;
     padding-left: .7rem;
-    border-left: .05rem solid var(--color-main);
+    border-left: .1rem solid var(--color-main);
     height: 1%;
     overflow: hidden;
 }
@@ -474,26 +474,29 @@ section {
 #sect3 .travail a {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    height: 5.2rem;
+    min-height: 5.2rem;
     width: 19rem;
-    border-left: .2rem solid var(--color-main);
+    border-left: .15rem solid var(--color-main);
+    background-color: var(--bg-color-terciary);
     padding: .7rem;
     border-radius: 0 .4rem .4rem 0;
 }
 #sect3 .travail-img {
     position: relative;
-    height: 100%;
+    height: 5.2rem;
     width: 4rem;
 }
 #sect3 .travail-img img {
     position: absolute;
-    top: 50%;
     left: 50%;
+    top: 50%;
     transform: translate(-50%,-50%);
     max-height: 90%;
     max-width: 90%;
 }
+
 #sect3 .travail-box-info {
     position: relative;
     width: 14rem;
@@ -512,6 +515,7 @@ section {
     font-weight: 400;
     right: 0;
     font-style: italic;
+    color: var(--color-secondary);
 }
 #sect3 .travail-box-info p {
     position: absolute;

@@ -85,7 +85,7 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    // Mouvement du header au scroll
+    // Mouvement du scroll
     var lastScrollTop = 0;
     $(window).scroll(function(){
         fixParticules()
@@ -139,6 +139,12 @@ $(document).ready(function() {
         lastScrollTop = st;
     });
 
+    // Version téléphone 
+    if (window.matchMedia('(max-width: 800px) and (min-width: 200px)').matches)
+    {
+        
+    }
+    // Page qui change de taille
     $(window).resize(function() {
         let screenHeightnewRes = $(window).height();
         let screenWidthnewRes = $(window).width();
