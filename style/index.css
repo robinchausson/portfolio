@@ -20,6 +20,7 @@
     --font-family-logo: 'grandissimo',Helvetica,Arial;
 
     --font-size-normal: 1.1rem;
+    --font-size-petit-text: 1rem;
     --font-size-logo: 1.2rem;
     --font-size-tres-gros-titre: 1.6rem;
     --font-size-gros-titre: 1.65em;
@@ -51,6 +52,7 @@ a {
     color: inherit;
     overflow-anchor: none;
     font-weight: inherit;
+    font-size: inherit;
 }
 h1 {
     text-transform: uppercase;
@@ -255,6 +257,7 @@ section {
     top: 72%;
     display: flex;
     justify-content: space-between;
+    z-index: -1;
 }
 #sect1 footer > div {
     width: 35%;
@@ -268,6 +271,7 @@ section {
     width: 100%;
     opacity: 1;
 }
+
 /** Section 2 **/
 #sect2 .presentation {
     position: relative;
@@ -469,6 +473,9 @@ section {
     position: relative;
     margin-top: 1.8rem;
 }
+#sect3 .travail:hover .travail-img {
+    transform: scale(0.9);
+}
 #sect3 .travail a {
     position: relative;
     display: flex;
@@ -483,6 +490,7 @@ section {
     position: relative;
     height: 5rem;
     width: 4rem;
+    transition: .5s;
 }
 #sect3 .travail-img img {
     position: absolute;
@@ -527,7 +535,7 @@ section {
 }
 #sect4 .contacts > div {
     position: relative;
-    width: 50%;
+    width: 47%;
     margin-top: 1.8rem;
     padding-left: .7rem;
     border-left: .1rem solid var(--color-main);
