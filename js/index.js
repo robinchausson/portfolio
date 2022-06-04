@@ -18,7 +18,7 @@ $(document).ready(function() {
     }
     function switchPosNav(nb) {
         if ($('#posNav').html()) {
-            $('#posNav > div').css('transform','translateY(-'+1.18*(nb-1)+'rem)')
+            $('#posNav > div').css('transform','translateY(-'+1.68*(nb-1)+'rem)')
         }
     }
     function fixParticules() {

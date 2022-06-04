@@ -31,6 +31,7 @@ body header #posNav {
     margin-left: .25rem;
 }
 body header #posNav > div {
+    margin-bottom: .5rem;
     transition: .3s;
     font-size: var(--font-size-normal);
     font-weight: 800;
