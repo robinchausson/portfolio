@@ -165,10 +165,10 @@ section {
     margin-top: 1.4em;
 }
 #sect2 .presentation div p:not(#sect2 .presentation div p:last-of-type) {
-    padding-bottom: .3rem;
+    margin-bottom: .3rem;
 }
 #sect2 #presentation-info-perso div:nth-of-type(2) p:first-of-type {
-    padding-top: .3rem;
+    margin-top: .3rem;
 }
 
 /*** Section 3 ***/
@@ -178,6 +178,7 @@ section {
 }
 #sect3 .travail {
     width: 100%;
+    margin-top: 1.4rem;
 }
 #sect3 .travail a {
     width: 100%;
@@ -227,9 +228,14 @@ section {
     position: relative;
     z-index: 2;
 }
-
 #sect3 .travail-box-info p {
     display: none;
+}
+
+/** Section 4 **/
+#sect4 .contacts > div {
+    width: 100%;
+    margin-top: 1.4rem;
 }
 
 /*** Pied de page ***/
