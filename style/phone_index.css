@@ -17,10 +17,24 @@ body > header {
     font-family: var(--font-family-logo);
     font-size: var(--font-size-logo);
 }
+body header #phone-header {
+    display: flex;
+    align-items: center;
+}
 body header #opener {
-    display: block;
     z-index: 99;
     padding: .85rem 1rem .85rem 0;
+}
+body header #posNav {
+    height: 1.3rem;
+    overflow: hidden;
+    margin-left: .25rem;
+}
+body header #posNav > div {
+    transition: .3s;
+    font-size: var(--font-size-normal);
+    font-weight: 800;
+    color: white;
 }
 body header #opener .opener-bar{
     position: relative;

@@ -82,14 +82,14 @@ body > header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.9rem 5vw 1.7rem 5vw;
-    width: 90vw;
+    padding: 1.9rem 8vw 1.7rem 8vw;
+    width: 84vw;
     z-index: 10;
     transition: .3s;
     background-color: var(--bg-color-main);
     border-bottom: .05rem solid transparent;
 }
-body header #opener {
+body header #phone-header {
     display: none;
 }
 .logo {

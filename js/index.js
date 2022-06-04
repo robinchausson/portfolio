@@ -16,6 +16,11 @@ $(document).ready(function() {
         $('nav .onSection').removeClass('onSection')
         element.addClass('onSection')
     }
+    function switchPosNav(nb) {
+        if ($('#posNav').html()) {
+            $('#posNav > div').css('transform','translateY(-'+1.18*(nb-1)+'rem)')
+        }
+    }
     function fixParticules() {
         // Permet de faire boguer les particules de la première section
         $("#sect1 footer").css('top',heightFromTopParticules-$(document).scrollTop()*0.15+"px")
@@ -116,19 +121,24 @@ $(document).ready(function() {
         // Section 1 -> changer la navbar + animation de la section
         if (st < heightFromTopSect2-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(1)'))
+            switchPosNav(1)
+            $('#posNav > div').css('transform','translateY(0)')
         }
         // Section 2 -> animation des qualités
         else if (st >= heightFromTopSect2-headerHeight-50 && st < heightFromTopSect3-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(2)'))
+            switchPosNav(2)
             if (st >= heightFromTopCompetences-headerHeight-2/3*screenHeight) {
                 $('#sect2 .competences-bar > div').css('height','100%')
             }
         }
         else if (st >= heightFromTopSect3-headerHeight-50 && st < heightFromTopSect4-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(3)'))
+            switchPosNav(3)
         }
         else if (st >= heightFromTopSect4-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(4)'))
+            switchPosNav(4)
         }
 
         if (st > lastScrollTop){
