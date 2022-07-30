@@ -8,11 +8,6 @@
     font-family: 'inconsolata';
     src: url('../assets/font/Inconsolata.ttf');
 }
-/* Font primaire */
-@font-face {
-    font-family: 'josefin';
-    src: url('../assets/font/source.ttf');
-}
 
 /*** Principal ***/
 :root {
@@ -214,7 +209,8 @@ section {
     height: 80vh;
 }
 #sect1 article .img-moi img {
-    height: 100%;
+    height: 80vh;
+    position: relative;
 }
 #sect1 .en-savoir-plus {
     position: absolute;

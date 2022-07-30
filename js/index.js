@@ -59,8 +59,6 @@ $(document).ready(function() {
     let heightFromTopSect3 = $("#sect3").position().top
     let heightFromTopSect4 = $("#sect4").position().top
 
-    let heightFromTopCompetences = $('#sect2 .competences').offset().top
-
     // Code principal
     // Click en dehors
     $(document).click(function() {
@@ -99,7 +97,6 @@ $(document).ready(function() {
         // Lancer les animations des titres
         if (st == 0) {
             $('body > header').css({'border-color':'transparent'})
-            $('#sect2 .competences-bar > div').css('height','0%')
         }
         // titre section 1
         else if (st > heightFromTopSect2-screenHeight/1.15 && st < heightFromTopSect3-screenHeight/1.15) {
@@ -128,9 +125,6 @@ $(document).ready(function() {
         else if (st >= heightFromTopSect2-headerHeight-50 && st < heightFromTopSect3-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(2)'))
             switchPosNav(2)
-            if (st >= heightFromTopCompetences-headerHeight-2/3*screenHeight) {
-                $('#sect2 .competences-bar > div').css('height','100%')
-            }
         }
         else if (st >= heightFromTopSect3-headerHeight-50 && st < heightFromTopSect4-headerHeight-50) {
             navOnBarreSwitch($('nav li:nth-of-type(3)'))
