@@ -145,20 +145,6 @@ section {
     width: 100%;
     height: auto;
 }
-#sect1 footer {
-    top: 85%;
-}
-#sect1 footer > div {
-    width: 50%;
-}
-#sect1 footer > div:nth-child(1) {
-    margin-left: -3rem;
-}
-#sect1 footer > div > img {
-    height: 100%;
-    width: 100%;
-    opacity: 1;
-}
 /* Section 2 */
 #sect2 .presentation > div {
     width: 100%;
@@ -169,6 +155,10 @@ section {
 }
 #sect2 #presentation-info-perso div:nth-of-type(2) p:first-of-type {
     margin-top: .3rem;
+}
+#competences .competence {
+    width: 35%;
+    margin-right: 0;
 }
 
 /*** Section 3 ***/

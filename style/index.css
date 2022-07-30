@@ -247,26 +247,6 @@ section {
         opacity: 1;
     }
 }
-#sect1 footer {
-    position: absolute;
-    width: 100%;
-    top: 72%;
-    display: flex;
-    justify-content: space-between;
-    z-index: -1;
-}
-#sect1 footer > div {
-    width: 35%;
-    opacity: 1;
-}
-#sect1 footer > div:nth-child(1) {
-    margin-left: -17rem;
-}
-#sect1 footer > div > img {
-    height: 100%;
-    width: 100%;
-    opacity: 1;
-}
 
 /** Section 2 **/
 #sect2 .presentation {
@@ -301,156 +281,43 @@ section {
     font-weight: 900;
     margin-bottom: .7rem;
 }
-#sect2 .competences h3 {
-    padding-left: .7rem;
-    border-left: .05rem solid var(--color-main);
-}
-#sect2 .competences {
-    position: relative;
-    margin-top: 2.5rem;
-}
 #sect2 strong {
     font-style: italic;
 }
-
-/* Graphique des compétences */
-#sect2 .table-competence{
+#sect2 .presentation-competences {
     position: relative;
-    margin-top: 1.7rem;
-    height: 20rem;
-    width: 100%;
-    border-bottom: .2rem solid var(--color-main);
-    border-left: .2rem solid var(--color-main);
+    margin-top: 2.5rem;
 }
-/* Pourcentage */
-#sect2 .competence-pourcentage {
-    position: absolute;
-    left: -2.5rem;
+#sect2 .presentation-competences h3 {
+    padding-left: .7rem;
+    border-left: .1rem solid var(--color-main);
+    margin-bottom: 0;
+}
+#sect2 #competences {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
 }
-#sect2 .competence-pourcentage > div {
-    position: relative;
-    text-align: right;
+#competences .competence {
+    padding: 1rem;
+    background-color: var(--bg-color-terciary);
+    text-align: center;
+    margin-right: 1.5rem;
+    margin-top: 1.4rem;
+    width: 10.3rem;
 }
-#sect2 .competence-pourcentage > div::before {
-    position: absolute;
-    content: '';
-    left: 120%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: .5rem;
-    height: .1rem;
-    background-color: var(--color-main);
+#competences .competence:last-of-type {
+    margin-right: 0;
 }
-/* Logo des technologies */
-#sect2 .competence-logo {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 1rem;
+#competences .competence ion-icon {
+    font-size: var(--font-size-moyen-icon);
 }
-#sect2 .competence-logo > div {
-    position: relative;
-    width: 3rem;
-    height: 3rem;
+#competences .competence h4 {
+    margin-top: .45rem;
 }
-#sect2 .competence-logo > div img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    max-height: 100%;
-}
-/* Niveau personnel */
-#sect2 .competences-bar {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-}
-#sect2 .competences-bar > div {
-    position: relative;
-    top: 100%;
-    transform: translateY(-100%);
-    width: 5rem;
-    background-color: var(--color-main);
-    transition: height 2s;
-    height: 0;
-    cursor: pointer;
-}
-#sect2 .competences-bar > div::after {
-    position: absolute;
-    left: 50%;
-    top: -2.4rem;
-    transform: translateX(-50%)scale(0.8);
-    opacity: 0;
-    background-color: var(--color-main);
-    color: black;
-    padding: .3rem .5rem;
-    border-radius: .4rem;
-    transition: .2s;
-}
-#sect2 .competences-bar > div:hover::after{
-    opacity: 1;
-    top: -2.5rem;
-    transform: translateX(-50%)scale(1);
-}
-#sect2 .competences-bar > div::before {
-    position: absolute;
-    display: inline-block;
-    content: '';
-    border-right: .35rem solid transparent;
-    border-bottom: .4rem solid var(--color-main);
-    border-left: .35rem solid transparent;
-    height: 0;
-    width: 0;
-    left: 50%;
-    top: -.8rem;
-    transform: translateX(-50%)rotate(180deg)scale(0.8);
-    opacity: 0;
-    transition: .2s;
-}
-#sect2 .competences-bar > div:hover::before{
-    opacity: 1;
-    top: -.8rem;
-    transform: translateX(-50%)rotate(180deg)scale(1);
-}
-/* Affectation du niveau */
-#sect2 .competence-bar-html {
-    max-height: 95%;
-}
-#sect2 .competence-bar-html::after {
-    content: '95%';
-}
-#sect2 .competence-bar-css {
-    max-height: 95%;
-}
-#sect2 .competence-bar-css::after {
-    content: '95%';
-}
-#sect2 .competence-bar-js {
-    max-height: 70%;
-}
-#sect2 .competence-bar-js::after {
-    content: '70%';
-}
-#sect2 .competence-bar-php {
-    max-height: 75%;
-}
-#sect2 .competence-bar-php::after {
-    content: '75%';
-}
-#sect2 .competence-bar-python {
-    max-height: 90%;
-}
-#sect2 .competence-bar-python::after {
-    content: '95%';
-}
+
 
 /*** Section 3 ***/
 /* Travaux */

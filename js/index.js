@@ -21,10 +21,6 @@ $(document).ready(function() {
             $('#posNav > div').css('transform','translateY(-'+1.646*(nb-1)+'rem)')
         }
     }
-    function fixParticules() {
-        // Permet de faire boguer les particules de la première section
-        $("#sect1 footer").css('top',heightFromTopParticules-$(document).scrollTop()*0.15+"px")
-    }
     function openNav() {
         $('html,body').css({'overflow':'hidden'})
         $('nav').css({'width':'50%','border-color':'white'})
@@ -54,7 +50,6 @@ $(document).ready(function() {
     let screenWidth = $(window).width();
     $('#sect1').css('height',screenHeight+'px')
 
-    let heightFromTopParticules =  $("#sect1 footer").offset().top
     let heightFromTopSect2 = $("#sect2").position().top
     let heightFromTopSect3 = $("#sect3").position().top
     let heightFromTopSect4 = $("#sect4").position().top
@@ -91,7 +86,6 @@ $(document).ready(function() {
     // Mouvement du scroll
     var lastScrollTop = 0;
     $(window).scroll(function(){
-        fixParticules()
         
         var st = $(this).scrollTop();
         // Lancer les animations des titres
