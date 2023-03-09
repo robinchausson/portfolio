@@ -101,7 +101,7 @@ header {
     position: sticky;
     top: 0;
     visibility: hidden;
-    padding: 1.5rem 0;
+    padding: 1.2rem 0;
     animation: fadeDown 1s 4.5s forwards;
     background-color: $default-bg;
     transition: transform .3s, background-color .3s;
@@ -111,7 +111,7 @@ header {
         width: 80%;
         margin: 0 auto;
 
-        #header-menu {
+        #header-menu, .header-phone-logo {
             display: none;
         }
         ul {
@@ -170,7 +170,7 @@ section {
                 transition: 1s;
             }
             h1 {
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
                 animation: fontSizeH1 1s 2s forwards;
                 span {
                     position: relative;
@@ -196,7 +196,7 @@ section {
                 }
             }
             h2 {
-                margin-bottom: 2.5rem;
+                margin-bottom: 3rem;
                 font-size: $font-size-h1;
                 span {
                     position: relative;

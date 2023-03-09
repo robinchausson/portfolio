@@ -22,55 +22,69 @@ $(document).ready(function() {
         }, transitionTime);
     }
     function openMenu() {
-        // On affiche la banniere de transition
-        $('header').css({'background-color':'transparent','box-shadow':'none'})
-        $('#transition').css({'z-index':'9'})
-        startTransition()
+        if (!onMenuTransition) {
+            if (!isMenuOpen) {
+                onMenuTransition = true
+                // On affiche la banniere de transition
+                $('header').css({'background-color':'transparent','box-shadow':'none'})
+                $('#transition').css({'z-index':'9'})
+                startTransition()
 
-        // On anime les barre du menu burger
-        $('#header-menu > div:nth-of-type(2)').css({'width':'0'})
-        setTimeout(() => {
-            $('#header-menu > div:nth-of-type(1)').css({'width':'80%','transform':'translateY(5.9px)rotate(-45deg)'})
-            $('#header-menu > div:nth-of-type(3)').css({'width':'80%','transform':'translateY(-5.9px)rotate(45deg)'})
-        }, 300);
-
-        setTimeout(() => {
-            $('header ul').css({'height': wHeight+'px'})
-            $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s forwards')
-            $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .15s forwards')
-            $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .3s forwards')
-            $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s .45s forwards')
-        
-            setTimeout(() => {
-                $('header ul li').css({'visibility':'visible','animation':'none'})
-            }, 650);
-        }, transitionTime);
+                // On anime les barre du menu burger
+                $('#header-menu > div:nth-of-type(2)').css({'width':'0'})
+                setTimeout(() => {
+                    $('#header-menu > div:nth-of-type(1)').css({'width':'80%','transform':'translateY(5.9px)rotate(-45deg)'})
+                    $('#header-menu > div:nth-of-type(3)').css({'width':'80%','transform':'translateY(-5.9px)rotate(45deg)'})
+                }, 300);
+            
+                setTimeout(() => {
+                    $('header ul').css({'height': wHeight+'px'})
+                    $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s forwards')
+                    $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .15s forwards')
+                    $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .3s forwards')
+                    $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s .45s forwards')
+                
+                    setTimeout(() => {
+                        $('header ul li').css({'visibility':'visible','animation':'none'})
+                        isMenuOpen = true
+                        onMenuTransition = false
+                    }, 650);
+                }, transitionTime);
+            }
+        }
     }
     function closeMenu() {
-        // On anime les barres du menu burger
-        $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s reverse forwards')
-        $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .15s reverse forwards')
-        $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .3s reverse forwards')
-        $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s .45s reverse forwards')
+        if (!onMenuTransition) {
+            if (isMenuOpen) {
+                onMenuTransition = true
+                // On anime les barres du menu burger
+                $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s reverse forwards')
+                $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .15s reverse forwards')
+                $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .3s reverse forwards')
+                $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s .45s reverse forwards')
 
-        $('#header-menu > div:nth-of-type(1)').css({'width':'100%','transform':'rotate(0deg)'})
-        $('#header-menu > div:nth-of-type(3)').css({'width':'100%','transform':'rotate(0deg)'})
-        setTimeout(() => {
-            $('#header-menu > div:nth-of-type(2)').css({'width':'100%'})
-        }, 300);
-
-        setTimeout(() => {
-            $('header ul li').css({'visibility':'hidden'})
-        
-            // On retire la banniere de transition
-            $('header ul').css({'height': '0'})
-            endTransition()
-            setTimeout(() => {
-                $('header').css({'background-color':'inherit'})
-                $('#transition').css({'z-index':'100'})
-                $('header ul li').css('animation','none')
-            }, 100);
-        }, 650);
+                $('#header-menu > div:nth-of-type(1)').css({'width':'100%','transform':'rotate(0deg)'})
+                $('#header-menu > div:nth-of-type(3)').css({'width':'100%','transform':'rotate(0deg)'})
+                setTimeout(() => {
+                    $('#header-menu > div:nth-of-type(2)').css({'width':'100%'})
+                }, 300);
+            
+                setTimeout(() => {
+                    $('header ul li').css({'visibility':'hidden'})
+                
+                    // On retire la banniere de transition
+                    $('header ul').css({'height': '0'})
+                    endTransition()
+                    setTimeout(() => {
+                        $('header').css({'background-color':'inherit'})
+                        $('#transition').css({'z-index':'100'})
+                        $('header ul li').css('animation','none')
+                        isMenuOpen = false
+                        onMenuTransition = false
+                    }, 100);
+                }, 650);
+            }
+        }
     }
 
     $('a').hover(function() {
@@ -176,23 +190,11 @@ $(document).ready(function() {
 
     // Gérer l'animation du menu sur téléphone
     $('#header-menu').click(function() {
-        if (!onMenuTransition) {
-            if (!isMenuOpen) {
-                openMenu()
-                onMenuTransition = true
-                setTimeout(() => {
-                    isMenuOpen = true
-                    onMenuTransition = false
-                }, 1300);
-            }
-            else {
-                closeMenu()
-                onMenuTransition = true
-                setTimeout(() => {
-                    isMenuOpen = false
-                    onMenuTransition = false
-                }, 1300);
-            }
+        if (!isMenuOpen) {
+            openMenu()
+        }
+        else {
+            closeMenu()
         }
     })
     
