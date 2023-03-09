@@ -1,228 +1,72 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Portfolio - Robin Chausson</title>
-        <link rel="stylesheet" href="style/index.css"/>
-        <link rel="stylesheet" href="style/tablet_index.css"/>
-        <link rel="stylesheet" href="style/phone_index.css"/>
-        <link rel="icon" href="favicon.ico" />
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="Découvrez qui est Robin Chausson à travers son Portfolio.">
-        <meta property="og:title" content="Portfolio - Robin Chausson" >
-        <meta property="og:type" content="portfolio" >
-        <meta property="og:image" content="favicon.ico" />
-        <meta property="og:url" content="robinchausson.fr" />
-        <meta property="og:description" content="Découvrez qui est Robin Chausson à travers son Portfolio." />
-        <meta property="twitter:creator" content="@robinchausson" >
-        <meta property="twitter:description" content="Découvrez qui est Robin Chausson à travers son Portfolio." >
-        <meta property="twitter:title" content="Portfolio - Robin Chausson" >
-        <meta property="twitter:image" content="favicon.ico" >
-    </head>
-    <body>
-        <!-- En-tête -->
-        <header>
-            <div id="phone-header">
-                <div id="opener">
-                    <div class="opener-bar opener-bar1"></div>
-                    <div class="opener-bar opener-bar2"></div>
-                    <div class="opener-bar opener-bar3"></div>
-                </div>
-                <div id="posNav">
-                    <div>Accueil</div>
-                    <div>À propos</div>
-                    <div>Travaux</div>
-                    <div>Contact</div>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style/css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/93287fa863.js" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+
+    <meta name="description" content="Découvrez qui est Robin Chausson à travers son Portfolio.">
+    <meta property="og:title" content="Portfolio - Robin Chausson" >
+    <meta property="og:type" content="portfolio" >
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:url" content="robinchausson.fr" />
+    <meta property="og:description" content="Découvrez qui est Robin Chausson à travers son Portfolio." />
+    <meta property="twitter:creator" content="@robinchausson" >
+    <meta property="twitter:description" content="Découvrez qui est Robin Chausson à travers son Portfolio." >
+    <meta property="twitter:title" content="Portfolio - Robin Chausson" >
+    <meta property="twitter:image" content="favicon.ico" >
+
+    <title>Portfolio - Robin Chausson</title>
+</head>
+
+<body>
+    <div id="mouse-circle"></div>
+    <div id="transition"><div></div></div>
+
+    <header>
+        <ul>
+            <li><a href="#home" class="link-home text-link on-text-link">accueil</a></li>
+            <li><a href="#about" class="link-about text-link">à propos</a></li>
+            <li><a href="#top"><img src="assets/image/logo_rc.png" alt="Logo de Robin Chausson"></a></li>
+            <li><a href="#work" class="link-work text-link">travaux</a></li>
+            <li><a href="#contact" class="link-contact text-link">contact</a></li>
+        </ul>
+    </header>
+
+    <section id="home">
+        <div class="main">
+            <div>
+                <h1>
+                    <span>Bienvenue, </span> <br>
+                    <span>je m'appelle</span> <br> 
+                    <span><strong>Robin Chausson.</strong></span>
+                </h1>
+                <h2>
+                    <span>Je suis <strong>étudiant</strong></span> <br>
+                    <span>en école d'ingénieur</span> <br>
+                    <span>et <strong>développeur</strong> web.</span>
+                </h2>
+                <div class="btn btn-primary">
+                    <a href="#about">
+                        <p>En savoir plus</p>
+                        <div><i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
                 </div>
             </div>
-            <div><a href="#sect1"class="logo">RC</a></div>
-            <nav>
-                <ul>
-                    <li class="onSection"><a href="#sect1">Accueil</a></li>
-                    <li><a href="#sect2">À propos</a></li>
-                    <li><a href="#sect3">Travaux</a></li>
-                    <li><a href="#sect4">Contact</a></li>
-                    <!-- <div id="barre"></div> -->
-                </ul>
-            </nav>
-        </header>
+        </div>
+    </section>
 
-        <!-- Corps -->
-        <section id="sect1">
-            <article>
-                <div data-aos="fade-right" class="desc-moi">
-                    <h1><span>ROBIN</span> <br> <span>CHAUSSON</span></h1>
-                    <h2><span>Développeur Web Junior</span></h2>
-                </div>
-                <div data-aos="fade-left" class="img-moi">
-                    <img src="assets/img/accueil/robin.webp" alt="Photographie de face de Robin Chausson">
-                </div>
-            </article>
-            <div class="en-savoir-plus">
-                <a href="#sect2">
-                    <p>En savoir plus</p>
-                    <div class="fleches">
-                        <div class="fleche fleche1"><ion-icon name="chevron-down-sharp"></ion-icon></div>
-                        <div class="fleche fleche2"><ion-icon name="chevron-down-sharp"></ion-icon></div>
-                    </div>
-                </a>
-            </div>
-        </section>
+    <section id="about">
+        <div class="main">
 
-        <section id="sect2"class="section-defilement">
-            <header>
-                <h1>À propos</h1>
-                <div class="fond"></div>
-            </header>
-            <article class="presentation">
-                <div class="presentation-info" data-aos="fade-right"data-aos-duration="600">
-                    <h3>Informations personnelles</h3>
-                    <div id="presentation-info-perso">
-                        <div>
-                            <p><strong>Nom:</strong> Chausson</p>
-                            <p><strong>Prénom:</strong> Robin</p>
-                            <p><strong>Âge:</strong> 18</p>
-                        </div>
-                        <div>
-                            <p><strong>Statut:</strong> Étudiant</p>
-                            <p><strong>Localisation:</strong> Valenciennes</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="presentation-desc" data-aos="fade-right"data-aos-duration="600">
-                    <h3>En quelques mots</h3>
-                    <p>
-                        Je suis un jeune passionné d'informatique qui passe son temps libre
-                        à développer tous types de programmes.
-                    </p>
-                    <p>
-                        Au fil de mes apprentissages, je me suis spécialisé
-                        dans le développement web.
-                    </p>
-                </div>
-            </article>
-            <div class="presentation-competences" data-aos="fade-right"data-aos-duration="600">
-                <h3>Ce que je sais faire</h3>
-                <div id="competences">
-                    <div class="competence">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                        <h4>Forum</h4>
-                    </div>
-                    <div class="competence">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                        <h4>Blog</h4>
-                    </div>
-                    <div class="competence">
-                        <ion-icon name="business-outline"></ion-icon>
-                        <h4>Site d'entreprise</h4>
-                    </div>
-                    <div class="competence">
-                        <ion-icon name="person-outline"></ion-icon>
-                        <h4>Site personnel</h4>
-                    </div>  
-                    <div class="competence">
-                        <ion-icon name="newspaper-outline"></ion-icon>
-                        <h4>Portfolio</h4>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-        <div id="elt"></div>
-
-        <section id="sect3" class="section-defilement">
-            <header>
-                <h1>Travaux</h1>
-                <div class="fond"></div>
-            </header>
-            <article class="travaux">
-                <div class="travail" data-aos="fade-right"data-aos-duration="600">
-                    <a href="https://www.art-azz.fr" target="_blank">
-                        <div class="travail-img" id="travail-img-azz"><img src="assets/img/travaux-logo/azz.webp" alt="Logo du projet AZZ"></div>
-                        <div class="travail-box-info">
-                            <h3>AZZ<span>07/2022</span></h3>
-                            <p>Site d'exposition de photographies de l'artiste Anne Zerkovitz.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="travail" data-aos="fade-right"data-aos-duration="600">
-                    <a href="https://www.keepmykeys.fr/aguilar/" target="_blank">
-                        <div class="travail-img" id="travail-img-aguilar"><img src="assets/img/travaux-logo/aguilar.webp" alt="Logo du projet Aguilar"></div>
-                        <div class="travail-box-info">
-                            <h3>Aguilar<span>05/2020</span></h3>
-                            <p>Site de présentation de prestation d'expert comptable.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="travail" data-aos="fade-right"data-aos-duration="600">
-                    <a href="https://www.cloud.keepmykeys.fr/" target="_blank">
-                        <div class="travail-img" id="travail-img-kmc"><img src="assets/img/travaux-logo/keepmycloud.webp"></div>
-                        <div class="travail-box-info">
-                            <h3>KeepMyCloud<span>04/2022</span></h3>
-                            <p>KeepMyCloud permet de stocker ses fichiers et de les partager en ligne.</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="travail" data-aos="fade-right"data-aos-duration="600">
-                    <a href="https://www.keepmykeys.fr" target="_blank">
-                        <div class="travail-img" id="travail-img-kmk"><img src="assets/img/travaux-logo/keepmykeys.webp"alt="Logo du projet KeepMyKeys"></div>
-                        <div class="travail-box-info">
-                            <h3>KeepMyKeys<span>03/2022</span></h3>
-                            <p>KeepMyKeys est un gestionnaire de mot de passes.</p>
-                        </div>
-                    </a>
-                </div>
-            </article>
-        </section>
-
-        <section id="sect4" class="section-defilement">
-            <header>
-                <h1>Contact</h1>
-                <div class="fond"></div>
-            </header>
-            <article>
-                <div class="contacts">
-                    <div class="contact-tel-email" data-aos="fade-right"data-aos-duration="600">
-                        <h3>Téléphone & email</h3>
-                        <div class="contact">
-                            <ion-icon name="call"></ion-icon>
-                            <p><a href="tel:+33633220642" target="_blank">06.33.22.06.42</a></p>
-                        </div>
-                        <div class="contact">
-                            <ion-icon name="mail"></ion-icon>
-                            <p><a href="mailto:me@robinchausson.com" target="_blank">me@robinchausson.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-reseaux" data-aos="fade-right"data-aos-duration="600">
-                        <h3>Réseaux sociaux</h3>
-                        <div class="contact">
-                            <ion-icon name="logo-twitter"></ion-icon>
-                            <p><a href="https://twitter.com/robinchausson" target="_blank">@robinchausson</a></p>
-                        </div>
-                        <div class="contact">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                            <p><a href="https://www.instagram.com/rob1.chs/" target="_blank">rob1.chs</a></p>
-                        </div>
-                        <div class="contact">
-                            <ion-icon name="logo-discord"></ion-icon>
-                            <p><a href="https://discord.com/" target="_blank">calz#2821</a></p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- Pied de page -->
-        <footer>
-        </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="js/index.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <noscript>
-            <p>Votre navigateur ne permet pas de charger le JavaScript.</p>
-        </noscript>
-    </body>
+        </div>
+    </section>
+</body>
 </html>
