@@ -3,6 +3,7 @@ $(document).ready(function() {
     // Variables
     var wHeight = $(window).innerHeight()
     var wWidth = $(window).innerWidth()
+    var headerHeight = $('header').innerHeight()
     var transitionTime = 650
     var onTransition = false
     var onMenuTransition = false
@@ -22,69 +23,55 @@ $(document).ready(function() {
         }, transitionTime);
     }
     function openMenu() {
-        if (!onMenuTransition) {
-            if (!isMenuOpen) {
-                onMenuTransition = true
-                // On affiche la banniere de transition
-                $('header').css({'background-color':'transparent','box-shadow':'none'})
-                $('#transition').css({'z-index':'9'})
-                startTransition()
+        // On affiche la banniere de transition
+        $('header').css({'background-color':'transparent','box-shadow':'none'})
+        $('#transition').css({'z-index':'9'})
+        startTransition()
 
-                // On anime les barre du menu burger
-                $('#header-menu > div:nth-of-type(2)').css({'width':'0'})
-                setTimeout(() => {
-                    $('#header-menu > div:nth-of-type(1)').css({'width':'80%','transform':'translateY(5.9px)rotate(-45deg)'})
-                    $('#header-menu > div:nth-of-type(3)').css({'width':'80%','transform':'translateY(-5.9px)rotate(45deg)'})
-                }, 300);
-            
-                setTimeout(() => {
-                    $('header ul').css({'height': wHeight+'px'})
-                    $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s forwards')
-                    $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .15s forwards')
-                    $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .3s forwards')
-                    $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s .45s forwards')
-                
-                    setTimeout(() => {
-                        $('header ul li').css({'visibility':'visible','animation':'none'})
-                        isMenuOpen = true
-                        onMenuTransition = false
-                    }, 650);
-                }, transitionTime);
-            }
-        }
+        // On anime les barre du menu burger
+        $('#header-menu > div:nth-of-type(2)').css({'width':'0'})
+        setTimeout(() => {
+            $('#header-menu > div:nth-of-type(1)').css({'width':'80%','transform':'translateY(5.9px)rotate(-45deg)'})
+            $('#header-menu > div:nth-of-type(3)').css({'width':'80%','transform':'translateY(-5.9px)rotate(45deg)'})
+        }, 300);
+
+        setTimeout(() => {
+            $('header ul').css({'height': wHeight+'px'})
+            $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s forwards')
+            $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .15s forwards')
+            $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .3s forwards')
+            $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s .45s forwards')
+        
+            setTimeout(() => {
+                $('header ul li').css({'visibility':'visible','animation':'none'})
+            }, 650);
+        }, transitionTime);
     }
     function closeMenu() {
-        if (!onMenuTransition) {
-            if (isMenuOpen) {
-                onMenuTransition = true
-                // On anime les barres du menu burger
-                $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s reverse forwards')
-                $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .15s reverse forwards')
-                $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .3s reverse forwards')
-                $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s .45s reverse forwards')
+        // On anime les barres du menu burger
+        $('header ul li:nth-of-type(5)').css('animation','fadeDown .2s reverse forwards')
+        $('header ul li:nth-of-type(4)').css('animation','fadeDown .2s .15s reverse forwards')
+        $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .3s reverse forwards')
+        $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s .45s reverse forwards')
 
-                $('#header-menu > div:nth-of-type(1)').css({'width':'100%','transform':'rotate(0deg)'})
-                $('#header-menu > div:nth-of-type(3)').css({'width':'100%','transform':'rotate(0deg)'})
-                setTimeout(() => {
-                    $('#header-menu > div:nth-of-type(2)').css({'width':'100%'})
-                }, 300);
-            
-                setTimeout(() => {
-                    $('header ul li').css({'visibility':'hidden'})
-                
-                    // On retire la banniere de transition
-                    $('header ul').css({'height': '0'})
-                    endTransition()
-                    setTimeout(() => {
-                        $('header').css({'background-color':'inherit'})
-                        $('#transition').css({'z-index':'100'})
-                        $('header ul li').css('animation','none')
-                        isMenuOpen = false
-                        onMenuTransition = false
-                    }, 100);
-                }, 650);
-            }
-        }
+        $('#header-menu > div:nth-of-type(1)').css({'width':'100%','transform':'rotate(0deg)'})
+        $('#header-menu > div:nth-of-type(3)').css({'width':'100%','transform':'rotate(0deg)'})
+        setTimeout(() => {
+            $('#header-menu > div:nth-of-type(2)').css({'width':'100%'})
+        }, 300);
+
+        setTimeout(() => {
+            $('header ul li').css({'visibility':'hidden'})
+        
+            // On retire la banniere de transition
+            $('header ul').css({'height': '0'})
+            endTransition()
+            setTimeout(() => {
+                $('header').css({'background-color':'inherit'})
+                $('#transition').css({'z-index':'100'})
+                $('header ul li').css('animation','none')
+            }, 100);
+        }, 650);
     }
 
     $('a').hover(function() {
@@ -99,7 +86,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         var href = $(this).attr('href')
-        var coord = $(href).offset().top
+        var coord = $(href).offset().top-headerHeight
         // Pour scroller vraiment jusqu'en haut.
         if (href == '#home') {
             coord = 0
@@ -120,7 +107,7 @@ $(document).ready(function() {
             $('html, body').animate({
                 scrollTop: coord
             }, 500);
-        }, 700);
+        }, 300);
         
         
         
@@ -135,7 +122,7 @@ $(document).ready(function() {
             $('header').css('box-shadow', 'none')
         }
 
-        if ($(window).scrollTop() >= $('#about').offset().top) {
+        if ($(window).scrollTop()+headerHeight+20 >= $('#about').offset().top) {
             $('header li a').removeClass('on-text-link')
             $('.link-about').addClass('on-text-link')
         }
@@ -163,7 +150,6 @@ $(document).ready(function() {
     }).mouseover(); // call the handler immediately
 
     // Set la hauteur de la première section
-    var headerHeight = $('header').innerHeight()
     $('section:nth-of-type(1)').css('height',wHeight-headerHeight+'px')
 
     // Gérer les animations des titres de la première section
@@ -190,11 +176,23 @@ $(document).ready(function() {
 
     // Gérer l'animation du menu sur téléphone
     $('#header-menu').click(function() {
-        if (!isMenuOpen) {
-            openMenu()
-        }
-        else {
-            closeMenu()
+        if (!onMenuTransition) {
+            if (!isMenuOpen) {
+                openMenu()
+                onMenuTransition = true
+                setTimeout(() => {
+                    isMenuOpen = true
+                    onMenuTransition = false
+                }, 1300);
+            }
+            else {
+                closeMenu()
+                onMenuTransition = true
+                setTimeout(() => {
+                    isMenuOpen = false
+                    onMenuTransition = false
+                }, 1300);
+            }
         }
     })
     

@@ -85,6 +85,7 @@ h6 {
 }
 p {
     font-size: $font-size-default;
+    font-weight: 500;
 }
 .font-size-h1 {
     font-size: $font-size-h1!important;
@@ -101,7 +102,7 @@ header {
     position: sticky;
     top: 0;
     visibility: hidden;
-    padding: 1.2rem 0;
+    padding: 1.5rem 0;
     animation: fadeDown 1s 4.5s forwards;
     background-color: $default-bg;
     transition: transform .3s, background-color .3s;
@@ -136,6 +137,7 @@ header {
 section {
     position: relative;
     overflow-x: hidden;
+    overflow-y: visible;
 
     .main {
         position: relative;
@@ -228,7 +230,131 @@ section {
         }
     }
     &#about {
-        height: 100vh;
+        overflow: visible;
+        
+        .main {
+
+            .pp {
+                position: relative;
+                height: 16.5vw;
+    
+                .img-pp {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 5;
+                    width: 10vw;
+                    height: 10vw;
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $border-radius-circle;
+                        border: 2px solid $default-color;
+                        filter: drop-shadow(0 0 50px white);
+                    }
+                }
+                
+                .cercle {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: $border-radius-circle;
+                    border: 2px solid $default-color;
+    
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        left: 50%;
+                        border-radius: $border-radius-circle;
+                        transform-origin: top left;
+                        z-index: 2;
+                    }
+                }
+                .cercle-int {
+                    width: 13vw;
+                    height: 13vw;
+                    z-index: 3;
+    
+                    &::after {
+                        width: 90%;
+                        height: 90%;
+                        border: 5rem dotted $default-bg;
+                        animation: rotation 7s infinite linear;
+                    }
+                }
+                .cercle-ext {
+                    width: 16vw;
+                    height: 16vw;
+                    z-index: 4;
+    
+                    &::after {
+                        width: 90%;
+                        height: 90%;
+                        border: 7rem dotted $default-bg;
+                        animation: rotation 10s infinite linear;
+                    }
+                }
+                
+            }
+            .desc {
+                position: relative;
+                margin: 0 auto;
+                width: 53%;
+                z-index: 4;
+
+                padding: 4rem 0 2.7rem 0;
+                border-radius: $border-radius-circle;
+                top: -5vw;
+
+                background: rgba($color: $secondary-color, $alpha: .5);
+                box-shadow: 0 8px 32px 0 $secondary-bg;
+                backdrop-filter: blur( 4px );
+
+                .desc-general {
+                    position: relative;
+                    width: 70%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    
+                    .desc-general-item {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        margin-bottom: .5rem;
+
+                        p {
+                            margin-left: .8rem;
+                        }
+                    }
+                    
+                }
+                .desc-line {
+                    position: relative;
+                    margin: 1.5rem auto;
+                    width: 33%;
+                    height: 2px;
+                    background-color: $default-color;
+                }
+                .desc-text {
+                    width: 70%;
+                    margin: 0 auto;
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
+    }
+    &#work {
+        min-height: 80vh;
     }
 }
 
@@ -295,7 +421,7 @@ section {
     
     a {
         display: flex;
-        padding: .65rem .7rem;
+        padding: .75rem .8rem;
         p {
             margin-right: .6rem;
             top: -.05rem;
@@ -370,6 +496,14 @@ section {
     100% {
         opacity: 1;
         transform: translate(-150%, -150%);
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)translate(-50%, -50%);
+    }
+    to {
+        transform: rotate(360deg)translate(-50%, -50%);
     }
 }
 
