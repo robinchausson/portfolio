@@ -1,0 +1,131 @@
+@media only screen and (max-width: 768px) {
+    // Variables
+    $font-size-default: 3vw;
+    $font-size-h1: 8vw;
+    $font-size-h2: 7vw;
+    $font-size-h3: 6vw;
+    $font-size-h4: 5.5vw;
+    $font-size-h5: 5vw;
+    $font-size-h6: 4vw;
+    $font-size-small: 2vw;
+
+    h1 {
+        font-size: $font-size-h1;
+    }
+    h2 {
+        font-size: $font-size-h2;
+    }
+    h3 {
+        font-size: $font-size-h3;
+    }
+    h4 {
+        font-size: $font-size-h4;
+    }
+    h5 {
+        font-size: $font-size-h5;
+    }
+    h6 {
+        font-size: $font-size-h6;
+    }
+    p {
+        font-size: $font-size-default;
+    }
+    .font-size-h1 {
+        font-size: $font-size-h1!important;
+    }
+    .font-size-h2 {
+        font-size: $font-size-h2!important;
+    }
+    .btn {
+        a {
+            div {
+                font-size: $font-size-default;
+            }
+        }
+        
+    }
+    #mouse-circle {
+        display: none;
+    }
+
+    header {
+        //animation: none!important;
+        //visibility: visible;
+
+        .main {
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            #header-menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 5vw;
+                height: 3.5vw;
+    
+                div {
+                    position: relative;
+                    height: 1px;
+                    width: 100%;
+                    background-color: $default-color;
+                    transition: .5s;
+                }
+            }
+            .header-phone-logo {
+                a {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        height: 3.5vw;
+                    }
+                }
+
+            }
+            ul {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-direction: column;
+                justify-content: center;
+                margin: 0;
+
+                li {
+                    font-size: $font-size-default;
+                    margin-bottom: 1rem;
+                    visibility: hidden;
+
+                    &:nth-of-type(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+    }
+    section {
+        .main {
+            width: 85%;
+        }
+        &#home {
+            .main {
+                h2 {
+                    font-size: $font-size-h1;
+                }
+            }
+            
+        }
+    }
+
+    // Animations
+    @keyframes fontSizeH1 {
+        0% {
+            font-size: $font-size-h1;
+        }
+        100% {
+            font-size: $font-size-h2;
+        }
+    }
+}
