@@ -108,21 +108,13 @@ $(document).ready(function() {
             setTimeout(() => {
                 $('html, body').animate({
                     scrollTop: coord
-                }, 10);
-            }, 300);
+                }, 1000);
+            }, 800);
         }
-        else if (!isMenuOpen && !onMenuTransition) {
-            startTransition()
-            setTimeout(() => {
-                endTransition()
-            }, transitionTime);
-
-            // Scroll
-            setTimeout(() => {
-                $('html, body').animate({
-                    scrollTop: coord
-                }, 10);
-            }, 300);
+        else {
+            $('html, body').animate({
+                scrollTop: coord
+            }, 1000);
         }
     });
 
