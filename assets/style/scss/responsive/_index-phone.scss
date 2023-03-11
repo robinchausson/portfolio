@@ -1,12 +1,12 @@
 @media only screen and (max-width: 768px) {
     // Variables
-    $font-size-default: 3.5vw;
+    $font-size-default: 4vw;
     $font-size-h1: 8vw;
     $font-size-h2: 7vw;
-    $font-size-h3: 6vw;
-    $font-size-h4: 5.5vw;
-    $font-size-h5: 5vw;
-    $font-size-h6: 4vw;
+    $font-size-h3: 5.6vw;
+    $font-size-h4: 5.2vw;
+    $font-size-h5: 4.8vw;
+    $font-size-h6: 4.4vw;
     $font-size-small: 2vw;
 
     h1 {
@@ -44,10 +44,6 @@
         }
         
     }
-    #mouse-circle {
-        display: none;
-    }
-
     header {
         //animation: none!important;
         //visibility: visible;
@@ -120,31 +116,34 @@
         &#about {
 
             .main {
+                top: 0;
+                margin-top: 30vw;
+                padding-bottom: 2.5vw;
+
                 .pp {
-                    height: 30vw;
         
                     .img-pp {
                         width: 23vw;
                         height: 23vw;
                     }
                     .cercle-int {
-                        width: 35vw;
-                        height: 35vw;
+                        width: 32.5vw;
+                        height: 32.5vw;
         
                         &::after {
                             width: 70%;
                             height: 70%;
-                            border: 2rem dotted $default-bg;
+                            border-width: 2rem;
                         }
                     }
                     .cercle-ext {
-                        width: 47vw;
-                        height: 47vw;
+                        width: 43vw;
+                        height: 43vw;
         
                         &::after {
                             width: 78%;
                             height: 78%;
-                            border: 3.5rem dotted $default-bg;
+                            border-width: 4.5rem;
                         }
                     }
                     
@@ -152,34 +151,35 @@
                 .desc {
                     position: relative;
                     margin: 0 auto;
-                    width: 85%;
+                    width: 100%;
                     z-index: 4;
-    
-                    padding: 3rem 0 1.8rem 0;
+
                     border-radius: $border-radius-rounded;
                     top: -6.5vw;
     
                     .desc-general {
-                        width: 80%;
-                        justify-content: flex-start;
+                        justify-content: center;
+                        padding-top: 5rem;
 
-                        .desc-general-item {
-                            margin: 0 auto;
-                            margin-bottom: .7rem;
-
-                            p {
-                                margin-left: .8rem;
+                        > div {
+                            width: 40vw;
+                            text-align: center;
+                            .desc-general-item {
+                                margin: 0 auto;
+                                margin-bottom: 1rem;
+    
+                                div {
+                                    font-size: $font-size-default;
+                                }                        
                             }
-                        
                         }
                     }
                     .desc-line {
-                        width: 40%;
-                        margin-top: 1.3rem;
+                        width: 66%;
+                        margin: 2.3rem auto;
                     }
                     .desc-text {
-                        width: 80%;
-
+                        width: 100%;
                     }
                 }
     

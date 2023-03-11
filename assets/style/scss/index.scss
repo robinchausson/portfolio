@@ -9,10 +9,10 @@ $third-color: #415A77;
 $font-size-default: 1vw;
 $font-size-h1: 3.8vw;
 $font-size-h2: 2.8vw;
-$font-size-h3: 2.5vw;
-$font-size-h4: 2vw;
-$font-size-h5: 1.7vw;
-$font-size-h6: 1.3vw;
+$font-size-h3: 1.8vw;
+$font-size-h4: 1.6vw;
+$font-size-h5: 1.1vw;
+$font-size-h6: 1vw;
 $font-size-small: .8vw;
 
 $border-radius-circle: 50rem;
@@ -27,7 +27,6 @@ html, body {
     background-color: $default-bg;
     font-family: 'Golos Text', sans-serif;
     color: $default-color;
-    height: 120vh;
     // palette : https://coolors.co/palette/0d1b2a-1b263b-415a77-778da9-e0e1dd
 }
 
@@ -51,6 +50,9 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background: $secondary-color;
 }
+::-webkit-scrollbar-thumb:active {
+    background: $third-color;
+  }
 
 ul, li  {
     list-style-type: none;
@@ -67,25 +69,45 @@ h1,h2,h3,h4,h5,h6,p {
 }
 h1 {
     font-size: $font-size-h1;
+    font-weight: 700;
 }
 h2 {
     font-size: $font-size-h2;
+    font-weight: 700;
 }
 h3 {
     font-size: $font-size-h3;
+    font-weight: 600;
 }
 h4 {
     font-size: $font-size-h4;
+    font-weight: 600;
 }
 h5 {
     font-size: $font-size-h5;
+    font-weight: 500;
 }
 h6 {
     font-size: $font-size-h6;
+    font-weight: 500;
 }
 p {
     font-size: $font-size-default;
-    font-weight: 500;
+    font-weight: 400;
+}
+strong {
+    position: relative;
+    font-weight: inherit;
+    &:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        height: 40%;
+        width: 100%;
+        background-color: $third-color;
+        z-index: -1;
+    }
 }
 .font-size-h1 {
     font-size: $font-size-h1!important;
@@ -101,9 +123,9 @@ header {
     position: -ms-sticky;
     position: sticky;
     top: 0;
-    visibility: hidden;
     padding: 1.5rem 0;
-    animation: fadeDown 1s 4.5s forwards;
+    //visibility: hidden;
+    //animation: fadeDown 1s 4.5s forwards;
     background-color: $default-bg;
     transition: transform .3s, background-color .3s;
     z-index: 10;
@@ -137,12 +159,19 @@ header {
 section {
     position: relative;
     overflow-x: hidden;
-    overflow-y: visible;
 
     .main {
         position: relative;
         width: 80%;
         margin: 0 auto;
+    }
+    .top-wave {
+        position: relative;
+        z-index: 5;
+        
+        img {
+            width: 100%;
+        }
     }
 
     &#home {
@@ -155,21 +184,9 @@ section {
             text-align: center;
             height: 100%;
 
-            strong {
-                position: relative;
-                &:before{
-                    position: absolute;
-                    content: '';
-                    left: 0;
-                    bottom: 0;
-                    height: 40%;
-                    width: 100%;
-                    background-color: $third-color;
-                    z-index: -1;
-                }
-            }
             h1, h2 {
                 transition: 1s;
+                cursor: pointer;
             }
             h1 {
                 margin-bottom: 2.5rem;
@@ -231,10 +248,10 @@ section {
     }
     &#about {
         overflow: visible;
-        padding-top: 2.5rem;
+        background-color: $third-color;
 
         .main {
-
+            top: 4.5rem;
             .pp {
                 position: relative;
                 height: 16.5vw;
@@ -247,13 +264,16 @@ section {
                     z-index: 5;
                     width: 10vw;
                     height: 10vw;
+                    max-width: 0;
+                    max-height: 0;
+                    transition: 1.5s;
     
                     img {
                         width: 100%;
                         height: 100%;
                         border-radius: $border-radius-circle;
                         border: 2px solid $default-color;
-                        filter: drop-shadow(0 0 50px white);
+                        filter: drop-shadow(0 0 4rem $default-color);
                     }
                 }
                 
@@ -264,6 +284,7 @@ section {
                     transform: translate(-50%, -50%);
                     border-radius: $border-radius-circle;
                     border: 2px solid $default-color;
+                    opacity: 0;
     
                     &::after {
                         position: absolute;
@@ -279,24 +300,26 @@ section {
                     width: 13vw;
                     height: 13vw;
                     z-index: 3;
+                    transition: .7s .4s;
     
                     &::after {
                         width: 90%;
                         height: 90%;
-                        border: 5rem dotted $default-bg;
-                        animation: rotation 7s infinite linear;
+                        border: 5rem dotted $third-color;
+                        animation: rotation 10s infinite linear;
                     }
                 }
                 .cercle-ext {
                     width: 16vw;
                     height: 16vw;
                     z-index: 4;
+                    transition: .7s .7s;
     
                     &::after {
                         width: 90%;
                         height: 90%;
-                        border: 7rem dotted $default-bg;
-                        animation: rotation 10s infinite linear;
+                        border: 7rem dotted $third-color;
+                        animation: rotation 15s infinite linear;
                     }
                 }
                 
@@ -304,25 +327,33 @@ section {
             .desc {
                 position: relative;
                 margin: 0 auto;
-                width: 53%;
+                width: 40%;
                 z-index: 4;
-
-                padding: 4rem 0 2.7rem 0;
-                border-radius: $border-radius-circle;
                 top: -5vw;
 
-                background: rgba($color: $secondary-color, $alpha: .5);
-                box-shadow: 0 8px 32px 0 $secondary-bg;
-                backdrop-filter: blur( 4px );
+                border-radius: $border-radius-circle;
+
+                strong {
+                    &:before {
+                        background-color: $secondary-bg;
+                    }
+                }
 
                 .desc-general {
                     position: relative;
-                    width: 70%;
                     margin: 0 auto;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     flex-wrap: wrap;
+                    padding-top: 4rem;
+                    width: 85%;
+
+                    background: rgba($color: $third-color, $alpha: .2);
+                    box-shadow: 0 8px 32px 0 rgba($color: $third-color, $alpha: 0.37);
+                    backdrop-filter: blur( 4px );
+                    -webkit-backdrop-filter: blur( 4px );
+                    border-radius: $border-radius-rounded;
                     
                     .desc-general-item {
                         display: flex;
@@ -330,23 +361,29 @@ section {
                         align-items: center;
                         margin-bottom: .5rem;
 
-                        p {
-                            margin-left: .8rem;
+                        div {
+                            margin-right: .65rem;
+                            width: 1.5rem;
+                            text-align: center;
+                            font-size: $font-size-default;
                         }
+                        p {
+                            font-weight: 500;
+                        }
+                        
                     }
                     
                 }
                 .desc-line {
                     position: relative;
-                    margin: 1.5rem auto;
-                    width: 33%;
+                    margin: 2.7rem auto;
+                    width: 50%;
                     height: 2px;
-                    background-color: $default-color;
+                    background-color: $secondary-bg;
                 }
                 .desc-text {
-                    width: 70%;
                     margin: 0 auto;
-                    p {
+                    h3 {
                         text-align: center;
                     }
                 }
@@ -355,7 +392,7 @@ section {
         }
     }
     &#work {
-        min-height: 80vh;
+        height: 150vh;
     }
 }
 
@@ -379,22 +416,13 @@ section {
 .on-text-link::after {
     width: 66%;
 }
-#mouse-circle {
-    position: absolute;
-    transition: .2s;
-    width: 2.5vw;
-    height: 2.5vw;
-    opacity: 0.7;
-    border-radius: $border-radius-circle;
-    background-color: $secondary-color;
-    z-index: 5;
-}
 #transition {
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
     z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     div {
         position: absolute;
         left: 50%;
@@ -505,6 +533,18 @@ section {
     }
     to {
         transform: rotate(360deg)translate(-50%, -50%);
+    }
+}
+@keyframes zoomIn {
+    from {
+        max-width: 0;
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        max-width: 10vw;
+        max-height: 10vw;
     }
 }
 
