@@ -168,26 +168,6 @@ $(document).ready(function() {
     // Set la hauteur de la première section
     $('section:nth-of-type(1)').css('height',wHeight-headerHeight+'px')
 
-    // Gérer les animations des titres de la première section
-    $('section:nth-of-type(1) h1').hover(function() {
-        $(this).removeClass('font-size-h2').addClass('font-size-h1');
-        $('section:nth-of-type(1) h2').removeClass('font-size-h1').addClass('font-size-h2')
-    })
-    $('section:nth-of-type(1) h2').hover(function() {
-        $(this).removeClass('font-size-h2').addClass('font-size-h1');
-        $('section:nth-of-type(1) h1').removeClass('font-size-h1').addClass('font-size-h2')
-    })
-    setTimeout(() => {
-        $('section:nth-of-type(1) h1').addClass('font-size-h2').css('animation','none');
-        $('section:nth-of-type(1) h2').addClass('font-size-h1').css('animation','none');
-
-        
-        setTimeout(() => {
-            $('section:nth-of-type(1) h1').addClass('font-size-h1').removeClass('font-size-h2');
-            $('section:nth-of-type(1) h2').addClass('font-size-h2').removeClass('font-size-h1');
-        }, 10);
-    }, 4500);
-
     // Téléphone //
 
     // Gérer l'animation du menu sur téléphone

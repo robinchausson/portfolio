@@ -6,6 +6,7 @@ $default-color: #E0E1DD;
 $secondary-color: #778DA9;
 $third-color: #415A77;
 
+
 $font-size-default: 1vw;
 $font-size-h1: 3.8vw;
 $font-size-h2: 2.8vw;
@@ -124,8 +125,8 @@ header {
     position: sticky;
     top: 0;
     padding: 1.5rem 0;
-    //visibility: hidden;
-    //animation: fadeDown 1s 4.5s forwards;
+    visibility: hidden;
+    animation: fadeDown 1s 4.5s forwards;
     background-color: $default-bg;
     transition: transform .3s, background-color .3s;
     z-index: 10;
