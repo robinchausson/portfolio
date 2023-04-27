@@ -143,18 +143,34 @@ $(document).ready(function() {
             if (!$('.link-about').hasClass('on-text-link')) {
                 $('header li a').removeClass('on-text-link')
                 $('.link-about').addClass('on-text-link')
-
-                $('.img-pp').css({'max-height':'23vw','max-width':'23vw'})
-                $('.img-pp img').css({'border-color':'inherit'})
-                $('.cercle-int, .cercle-ext').css({'opacity':'.6'})
+            }
+            if (scrollTopAdjusted >= $('#about-me').offset().top) {
+                $('#about-me .about-icon-bar').css('max-height','100%')
+                $('#about-me .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
+                $('#about-me h3').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-me p').css({'transform':'translateX(0)','opacity':'1'})
+            }
+            if (scrollTopAdjusted >= $('#about-ecoles').offset().top) {
+                $('#about-ecoles .about-icon-bar').css('max-height','100%')
+                $('#about-ecoles .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
+                $('#about-ecoles h3').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-ecoles p').css({'transform':'translateX(0)','opacity':'1'})
+            }
+            if (scrollTopAdjusted >= $('#about-competences').offset().top) {
+                $('#about-competences .about-icon-bar').css('max-height','100%')
+                $('#about-competences .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
+                $('#about-competences h3').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-competences .about-points').css({'transform':'translateX(0)','opacity':'1'})
+                $('.about-points .toFill').css('background-color','#E0E1DD')
             }
         }
         else {
-            if ($('.img-pp').css('max-height') != '0') {
-                $('.img-pp').css({'max-height':'0','max-width':'0'})
-                $('.img-pp img').css({'border-color':'transparent'})
-                $('.cercle-ext, .cercle-int').css({'opacity':'0'})
-            }
+            $('.about-item .about-icon-bar').css('max-height','0')
+            $('.about-item .about-icon-bar-icon').css({'opacity':'0','transform':'scale(.2)'})
+            $('.about-points .toFill').css('background-color','transparent')
+
+            $('#about-competences h3, #about-me h3, #about-competences .about-points, #about-me p').css({'transform':'translateX(-10%)','opacity':'0'})
+            $('#about-ecoles h3, #about-ecoles p').css({'transform':'translateX(10%)','opacity':'0'})
         }
         // Work
         if (scrollTopAdjusted >= $('#work').offset().top) {

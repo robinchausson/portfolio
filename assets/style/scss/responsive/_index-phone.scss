@@ -114,75 +114,55 @@
             }
         }
         &#about {
-
             .main {
-                top: 0;
-                margin-top: 30vw;
-                padding-bottom: 2.5vw;
-
-                .pp {
-        
-                    .img-pp {
-                        width: 23vw;
-                        height: 23vw;
-                    }
-                    .cercle-int {
-                        width: 32.5vw;
-                        height: 32.5vw;
-        
-                        &::after {
-                            width: 70%;
-                            height: 70%;
-                            border-width: 2rem;
-                        }
-                    }
-                    .cercle-ext {
-                        width: 43vw;
-                        height: 43vw;
-        
-                        &::after {
-                            width: 78%;
-                            height: 78%;
-                            border-width: 4.5rem;
-                        }
-                    }
-                    
-                }
-                .desc {
-                    position: relative;
-                    margin: 0 auto;
+                .about-item {
                     width: 100%;
-                    z-index: 4;
 
-                    border-radius: $border-radius-rounded;
-                    top: 0vw;
-    
-                    .desc-general {
-                        justify-content: center;
-                        padding-top: 4.2rem;
+                    &:nth-child(2n) {
+                        .about-desc {
+                            margin-right: 1.5rem;
+                        }
+                    }
+
+                    &:nth-of-type(1) {
+                        .about-bar {
+                            height: 15rem;
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        .about-bar {
+                            height: 30rem;
+                        }
+                        .about-desc {
+                            margin-left: 0;
+                        }
+                        h3, p {
+                            transform: translateX(10%);
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        margin-bottom: 0;
+                        .about-bar {
+                            height: 21rem;
+                        }
+                    }
+
+                    .about-desc {
+                        margin-left: 1.5rem;
+                        width: 100%;
 
                         > div {
-                            width: 40vw;
-                            text-align: center;
-                            .desc-general-item {
-                                margin: 0 auto;
-                                margin-bottom: 1rem;
-    
-                                div {
-                                    font-size: $font-size-default;
-                                }                        
+                            .about-points {
+                                > div {
+                                    height: .45rem;
+                                    width: .45rem;
+                                }
                             }
                         }
                     }
-                    .desc-line {
-                        width: 66%;
-                        margin: 2.3rem auto;
-                    }
-                    .desc-text {
-                        width: 100%;
-                    }
+
+                    
                 }
-    
             }
         }
     }
