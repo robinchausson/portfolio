@@ -119,7 +119,7 @@ $(document).ready(function() {
     });
 
    
-    // Effet sur le header lorsque l'on scroll (pour mieux le voir)
+    // Effet au scroll
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 20 && !onTransition) {
             $('header').css('box-shadow', 'rgba(0, 0, 0, 0.24) 0px 3px 8px')
@@ -220,17 +220,41 @@ $(document).ready(function() {
         }, 10);
     }, 4500);
 
-    // Téléphone //
 
-    // Gérer l'animation du menu sur téléphone
-    $('#header-menu').click(function() {
-        if (!isMenuOpen) {
-            openMenu()
-        }
-        else {
-            closeMenu()
-        }
-    })
+    // Téléphone //
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        // Gérer l'animation du menu
+        $('#header-menu').click(function() {
+            if (!isMenuOpen) {
+                openMenu()
+            }
+            else {
+                closeMenu()
+            }
+        })
+
+        $(window).on('scroll', function() {
+    
+            // Changer le topic du menu
+            var scrollTopAdjusted = $(window).scrollTop()+2*headerHeight+wHeight/3
+            // About
+            if (scrollTopAdjusted >= $('#about').offset().top && scrollTopAdjusted < $('#work').offset().top) {
+                if (scrollTopAdjusted >= $('#about-me').offset().top) {
+                    $('#about-me .about-icon-bar').css('max-width','100%')
+                }
+                if (scrollTopAdjusted >= $('#about-ecoles').offset().top) {
+                    $('#about-ecoles .about-icon-bar').css('max-width','100%')
+                }
+                if (scrollTopAdjusted >= $('#about-competences').offset().top) {
+                    $('#about-competences .about-icon-bar').css('max-width','100%')
+                }
+            }
+            else {
+                $('.about-item .about-icon-bar').css('max-width','0')
+            }
+        })
+    }
+    
     
 
 })
