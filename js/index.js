@@ -129,7 +129,7 @@ $(document).ready(function() {
         }
 
         // Changer le topic du menu
-        var scrollTopAdjusted = $(window).scrollTop()+headerHeight+wHeight/3
+        var scrollTopAdjusted = $(window).scrollTop()+2*headerHeight+wHeight/3
         
         // Home
         if (scrollTopAdjusted < $('#about').offset().top) {
@@ -143,6 +143,7 @@ $(document).ready(function() {
             if (!$('.link-about').hasClass('on-text-link')) {
                 $('header li a').removeClass('on-text-link')
                 $('.link-about').addClass('on-text-link')
+                $('#about .animate-h1-cache').css({'left': '130%','visibility':'hidden'})
             }
             if (scrollTopAdjusted >= $('#about-me').offset().top) {
                 $('#about-me .about-icon-bar').css('max-height','100%')
@@ -153,7 +154,7 @@ $(document).ready(function() {
             if (scrollTopAdjusted >= $('#about-ecoles').offset().top) {
                 $('#about-ecoles .about-icon-bar').css('max-height','100%')
                 $('#about-ecoles .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
-                $('#about-ecoles h3').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-ecoles .about-desc-header').css({'transform':'translateX(0)','opacity':'1'})
                 $('#about-ecoles p').css({'transform':'translateX(0)','opacity':'1'})
             }
             if (scrollTopAdjusted >= $('#about-competences').offset().top) {
@@ -170,14 +171,39 @@ $(document).ready(function() {
             $('.about-points .toFill').css('background-color','transparent')
 
             $('#about-competences h3, #about-me h3, #about-competences .about-points, #about-me p').css({'transform':'translateX(-10%)','opacity':'0'})
-            $('#about-ecoles h3, #about-ecoles p').css({'transform':'translateX(10%)','opacity':'0'})
+            $('#about-ecoles .about-desc-header, #about-ecoles p').css({'transform':'translateX(10%)','opacity':'0'})
+        
+            $('#about .animate-h1-cache').css({'left': '50%','visibility':'visible'})
         }
         // Work
         if (scrollTopAdjusted >= $('#work').offset().top) {
             if (!$('.link-work').hasClass('on-text-link')) {
                 $('header li a').removeClass('on-text-link')
                 $('.link-work').addClass('on-text-link')
+                $('#work .animate-h1-cache').css({'left': '130%','visibility':'hidden'})
+                
             }
+            if (scrollTopAdjusted >= $('#projet1').offset().top) {
+                $('#projet1, #projet2').css({'opacity':'1','top':'0'})
+            }
+            if (scrollTopAdjusted >= $('#projet3').offset().top) {
+                $('#projet3, #projet4').css({'opacity':'1','top':'0'})
+            }
+        }
+        else {
+            $('#work .animate-h1-cache').css({'left': '50%','visibility':'visible'})
+            $('#work .projet').css({'opacity':'0','top':'2rem'})
+        }
+        // Contact
+        if (scrollTopAdjusted >= $('#contact').offset().top) {
+            if (!$('.link-contact').hasClass('on-text-link')) {
+                $('header li a').removeClass('on-text-link')
+                $('.link-contact').addClass('on-text-link')
+                $('#contact .animate-h1-cache').css({'left': '130%','visibility':'hidden'})
+            }
+        }
+        else {
+            $('#contact .animate-h1-cache').css({'left': '50%','visibility':'visible'})
         }
     })
 
