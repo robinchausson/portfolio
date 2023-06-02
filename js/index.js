@@ -200,10 +200,21 @@ $(document).ready(function() {
                 $('header li a').removeClass('on-text-link')
                 $('.link-contact').addClass('on-text-link')
                 $('#contact .animate-h1-cache').css({'left': '130%','visibility':'hidden'})
+
+                if (scrollTopAdjusted >= $('.reseaux').offset().top) {
+                    $('#twitter, #cv, #github, #linkedin').css({'transform':'translateX(0)','opacity':'1'})
+                    $('#contact .reseau-bar').css({'height':'5rem','opacity':'1'})
+                }
             }
         }
         else {
             $('#contact .animate-h1-cache').css({'left': '50%','visibility':'visible'})
+            
+            $('#contact #twitter').css({'transform':'translateX(-20%)','opacity':'0'})
+            $('#contact #cv').css({'transform':'translateX(-10%)','opacity':'0'})
+            $('#contact #github').css({'transform':'translateX(10%)','opacity':'0'})
+            $('#contact #linkedin').css({'transform':'translateX(20%)','opacity':'0'})
+            $('#contact .reseau-bar').css({'height':'0','opacity':'0'})
         }
     })
 
@@ -237,6 +248,7 @@ $(document).ready(function() {
     
             // Changer le topic du menu
             var scrollTopAdjusted = $(window).scrollTop()+2*headerHeight+wHeight/3
+
             // About
             if (scrollTopAdjusted >= $('#about').offset().top && scrollTopAdjusted < $('#work').offset().top) {
                 if (scrollTopAdjusted >= $('#about-me').offset().top) {
@@ -251,6 +263,22 @@ $(document).ready(function() {
             }
             else {
                 $('.about-item .about-icon-bar').css('max-width','0')
+            }
+            // Contact
+            if (scrollTopAdjusted >= $('#contact').offset().top) {
+                if (scrollTopAdjusted >= $('.reseaux').offset().top) {
+                    $('#twitter, #cv, #github, #linkedin').css({'transform':'translateX(0)','opacity':'1'})
+                    $('#contact .reseau-bar').css({'width':'33vw','opacity':'1','height':'3px'})
+                }
+            }
+            else {
+                $('#contact .animate-h1-cache').css({'left': '50%','visibility':'visible'})
+                
+                $('#contact #twitter').css({'transform':'translateX(-20%)','opacity':'0'})
+                $('#contact #cv').css({'transform':'translateX(-10%)','opacity':'0'})
+                $('#contact #github').css({'transform':'translateX(10%)','opacity':'0'})
+                $('#contact #linkedin').css({'transform':'translateX(20%)','opacity':'0'})
+                $('#contact .reseau-bar').css({'width':'0','opacity':'0','height':'3px'})
             }
         })
     }

@@ -560,11 +560,76 @@ section {
         }
     }
     &#contact {
-        min-height: 140vh;
-
         .main {
-             margin-top: 1.5rem;
+            margin-top: 1.5rem;
+
+            .reseaux {
+                position: relative;
+                margin: 0 auto;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2.5rem 0 6rem 0;
+
+                .reseau {
+                    flex: 1;
+                    position: relative;
+                    text-align: center;
+                    opacity: 0;
+                    
+                    a {
+                        .reseau-icon {
+                            transition: .3s;
+                        }
+                        h4 {
+                            margin-top: 1rem;
+                            z-index: 2;
+                        }
+
+                        &:hover {
+                            .reseau-icon {
+                                transform: scale(.9);
+                            }
+                        }
+                    }
+                }
+                #twitter {
+                    transition: .6s;
+                    transform: translateX(-20%);
+                }
+                #linkedin {
+                    transition: .6s;
+                    transform: translateX(20%);
+                }
+                #cv {
+                    transition: .6s;
+                    transform: translate(-10%);
+                }
+                #github {
+                    transition: .6s;
+                    transform: translateX(10%);
+                }
+                .reseau-bar {
+                    position: relative;
+                    transition: .6s;
+                    height: 0;
+                    width: 3px;
+                    border-radius: $border-radius-circle;
+                    background-color: $secondary-color;
+                }
+            }
         }
+    }
+}
+footer {
+   background-color: $third-color;
+   padding-bottom: .5rem;
+    h6 {
+        text-align: center;
+        color: $secondary-color;
     }
 }
 
