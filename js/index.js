@@ -201,7 +201,7 @@ $(document).ready(function() {
                 $('.link-contact').addClass('on-text-link')
                 $('#contact .animate-h1-cache').css({'left': '130%','visibility':'hidden'})
 
-                if (scrollTopAdjusted >= $('.reseaux').offset().top) {
+                if (scrollTopAdjusted >= $('.reseaux').offset().top*0.9) {
                     $('#twitter, #cv, #github, #linkedin').css({'transform':'translateX(0)','opacity':'1'})
                     $('#contact .reseau-bar').css({'height':'5rem','opacity':'1'})
                 }
@@ -266,7 +266,7 @@ $(document).ready(function() {
             }
             // Contact
             if (scrollTopAdjusted >= $('#contact').offset().top) {
-                if (scrollTopAdjusted >= $('.reseaux').offset().top) {
+                if (scrollTopAdjusted >= $('.reseaux').offset().top*0.9) {
                     $('#twitter, #cv, #github, #linkedin').css({'transform':'translateX(0)','opacity':'1'})
                     $('#contact .reseau-bar').css({'width':'33vw','opacity':'1','height':'3px'})
                 }
