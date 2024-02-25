@@ -14,12 +14,14 @@ $font-size-h3: 1.8vw;
 $font-size-h4: 1.4vw;
 $font-size-h5: 1.1vw;
 $font-size-h6: 1vw;
+$font-size-small-1: .9vw;
 $font-size-small: .8vw;
 
 $border-radius-circle: 50rem;
 $border-radius-rounded: 1rem;
 
 html, body {
+    /* Test */
     padding: 0;
     margin: 0;
     background-color: $default-bg;
@@ -131,6 +133,7 @@ header {
 
     .main {
         width: 80%;
+        max-width: 1500px;
         margin: 0 auto;
 
         #header-menu, .header-phone-logo {
@@ -142,14 +145,38 @@ header {
             justify-content: space-between;
     
             li {
-                font-size: $font-size-small;
+                font-size: .9vw;
                 font-weight: 500;
-                text-transform: uppercase;
+                text-transform: capitalize;
                
                 img {
                     width: 6.5vw;
                 }
             }
+        }
+
+        .text-link {
+            position: relative;
+        
+            &::after {
+                position: absolute;
+                content: '';
+                left: 50%;
+                top: 110%;
+                transform: translate(-50%,-110%);
+                height: 45%;
+                width: 0;
+                background-color: $secondary-color;
+                z-index: -1;
+                opacity: .7;
+                transition: .4s;
+            }
+            &:hover::after {
+                width: 102%;
+            }
+        }
+        .on-text-link::after {
+            width: 102%;
         }
     }
 
@@ -162,6 +189,7 @@ section {
     .main {
         position: relative;
         width: 80%;
+        max-width: 1500px;
         margin: 0 auto;
 
         h1 {
@@ -365,7 +393,7 @@ section {
                         .about-desc-date {
                             margin-left: 1rem;
                             font-style: italic;
-                            font-size: $font-size-default;
+                            font-size: $font-size-small-1;
                             font-weight: 500;
                             color: $secondary-color;
                         }
@@ -382,6 +410,10 @@ section {
                         transition: .6s .2s ease;
                         transform: translateX(-10%);
                         opacity: 0;
+
+                        &:nth-of-type(2) {
+                            margin-top: .5rem;
+                        }
                     }
                     
                     .about-desc-ecole {
@@ -405,10 +437,6 @@ section {
                         &:nth-last-child(1) {
                             margin-bottom: 0;
                         }
-
-                        h3 {
-                            margin-right: 2rem;
-                        }
                         
                         .about-points {
                             display: flex;
@@ -416,6 +444,7 @@ section {
                             transform: translateX(-10%);
                             opacity: 0;
                             transition: .6s .2s ease;
+                            margin-left: 1rem;
     
                             > div {
                                 position: relative;
@@ -438,6 +467,7 @@ section {
                                 margin-right: .5rem;
                                 font-weight: 500;
                                 color: $secondary-color;
+                                font-size: $font-size-small-1;
                                 font-style: italic;
                             }
                         }
@@ -491,9 +521,6 @@ section {
                         }
                         > div:nth-of-type(2) {
                             margin-left: 1.5rem;
-                            display: flex;
-                            flex-wrap: wrap;
-                            align-items: baseline;
 
                             h3 {
                                 z-index: 2;
@@ -508,9 +535,10 @@ section {
                             }
                             p {
                                 color: $secondary-color;
-                                font-style: italic;
+                                font-size: $font-size-small-1;
+                                
                                 font-weight: 500;
-                                margin-left: 1.2rem;
+                                margin-top: .3rem;
                             }   
 
                             &:hover {
@@ -525,7 +553,7 @@ section {
                         margin-top: .2rem;
 
                         h4 {
-                            margin-top: 1.2rem;
+                            margin-top: 1rem;
                             margin-bottom: .5rem;
                         }
                         .projet-body-techno {
@@ -534,14 +562,13 @@ section {
                             margin-top: .7rem;
 
                             > div {
-                                //background-color: $secondary-color;
                                 font-size: $font-size-small;
                                 text-transform: uppercase;
                                 color: $default-color;
                                 font-weight: 500;
                                 border-radius: $border-radius-rounded;
                                 text-align: center;
-                                padding: .35rem .8rem;
+                                padding: .35vw .8vw;
                                 margin-right: .7rem;
                             }
                             .couleur-sass { background-color: #C76494;}
@@ -628,29 +655,11 @@ footer {
     h6 {
         text-align: center;
         color: $secondary-color;
+        font-size: $font-size-small;
     }
 }
 
-.text-link {
-    position: relative;
 
-    &::after {
-        position: absolute;
-        top: 107%;
-        left: 0;
-        content:'';
-        width: 0;
-        height: 1px;
-        background-color: $default-color;
-        transition: .3s;
-    }
-    &:hover::after {
-        width: 66%;
-    }
-}
-.on-text-link::after {
-    width: 66%;
-}
 #transition {
     position: fixed;
     top: 0;
@@ -679,16 +688,17 @@ footer {
     display: inline-block;
     justify-content: space-between;
     align-items: center;
-    border-radius: $border-radius-rounded;
+    border-radius: $border-radius-circle;
     transition: .3s;
     z-index: 10;
     
     a {
         display: flex;
-        padding: .75rem .8rem;
+        padding: .8vw 1vw;
         p {
-            margin-right: .6rem;
+            margin-right: .6vw;
             top: -.05rem;
+            font-size: $font-size-default;
         }
         div {
             display: inline-block;

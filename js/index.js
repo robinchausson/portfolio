@@ -34,8 +34,9 @@ $(document).ready(function() {
             // On anime les barre du menu burger
             $('#header-menu > div:nth-of-type(2)').css({'width':'0'})
             setTimeout(() => {
-                $('#header-menu > div:nth-of-type(1)').css({'width':'80%','transform':'translateY(5.9px)rotate(-45deg)'})
-                $('#header-menu > div:nth-of-type(3)').css({'width':'80%','transform':'translateY(-5.9px)rotate(45deg)'})
+                $('#header-menu > div:nth-of-type(1)').css({'width':'80%','transform':'rotate(-45deg)','top':'calc(50% - 1px)'})
+                $('#header-menu > div:nth-of-type(2)').css({'width':'0'})
+                $('#header-menu > div:nth-of-type(3)').css({'width':'80%','transform':'rotate(45deg)','top':'calc(-50% + 0.5px)'})
             }, 300);
 
             setTimeout(() => {
@@ -64,8 +65,8 @@ $(document).ready(function() {
             $('header ul li:nth-of-type(2)').css('animation','fadeDown .2s .3s reverse forwards')
             $('header ul li:nth-of-type(1)').css('animation','fadeDown .2s .45s reverse forwards')
 
-            $('#header-menu > div:nth-of-type(1)').css({'width':'100%','transform':'rotate(0deg)'})
-            $('#header-menu > div:nth-of-type(3)').css({'width':'100%','transform':'rotate(0deg)'})
+            $('#header-menu > div:nth-of-type(1)').css({'width':'100%','transform':'rotate(0deg)','top':'0'})
+            $('#header-menu > div:nth-of-type(3)').css({'width':'100%','transform':'rotate(0deg)','top':'0'})
             setTimeout(() => {
                 $('#header-menu > div:nth-of-type(2)').css({'width':'100%'})
             }, 300);
