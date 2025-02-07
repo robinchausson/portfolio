@@ -150,6 +150,7 @@ $(document).ready(function() {
                 $('#about-me .about-icon-bar').css('max-height','100%')
                 $('#about-me .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
                 $('#about-me h3').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-me h2').css({'transform':'translateX(0)','opacity':'1'})
                 $('#about-me p').css({'transform':'translateX(0)','opacity':'1'})
             }
             if (scrollTopAdjusted >= $('#about-ecoles').offset().top) {
@@ -157,23 +158,32 @@ $(document).ready(function() {
                 $('#about-ecoles .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
                 $('#about-ecoles .about-desc-header').css({'transform':'translateX(0)','opacity':'1'})
                 $('#about-ecoles p').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-ecoles h2').css({'transform':'translateX(0)','opacity':'1'})
+            }
+            if (scrollTopAdjusted >= $('#about-experiences').offset().top) {
+                $('#about-experiences .about-icon-bar').css('max-height','100%')
+                $('#about-experiences .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
+                $('#about-experiences .about-desc-header').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-experiences p').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-experiences h2').css({'transform':'translateX(0)','opacity':'1'})
             }
             if (scrollTopAdjusted >= $('#about-competences').offset().top) {
                 $('#about-competences .about-icon-bar').css('max-height','100%')
                 $('#about-competences .about-icon-bar-icon').css({'opacity':'1','transform':'scale(1)'})
-                $('#about-competences h3').css({'transform':'translateX(0)','opacity':'1'})
-                $('#about-competences .about-points').css({'transform':'translateX(0)','opacity':'1'})
-                $('.about-points .toFill').css('background-color','#E0E1DD')
+                $('#about-competences .about-desc-header').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-competences p').css({'transform':'translateX(0)','opacity':'1'})
+                $('#about-competences h2').css({'transform':'translateX(0)','opacity':'1'})
             }
         }
         else {
             $('.about-item .about-icon-bar').css('max-height','0')
             $('.about-item .about-icon-bar-icon').css({'opacity':'0','transform':'scale(.2)'})
-            $('.about-points .toFill').css('background-color','transparent')
 
-            $('#about-competences h3, #about-me h3, #about-competences .about-points, #about-me p').css({'transform':'translateX(-10%)','opacity':'0'})
-            $('#about-ecoles .about-desc-header, #about-ecoles p').css({'transform':'translateX(10%)','opacity':'0'})
-        
+            // Retour vers la droite
+            $('#about-ecoles .about-desc-header, #about-ecoles p, #about-ecoles h2, #about-competences .about-desc-header, #about-competences p, #about-competences h2').css({'transform':'translateX(10%)','opacity':'0'})
+            // Retour vers la gauche
+            $('#about-experiences .about-desc-header, #about-experiences p, #about-experiences h2, #about-me p, #about-me h2').css({'transform':'translateX(-10%)','opacity':'0'})
+
             $('#about .animate-h1-cache').css({'left': '50%','visibility':'visible'})
         }
         // Work
@@ -257,6 +267,9 @@ $(document).ready(function() {
                 }
                 if (scrollTopAdjusted >= $('#about-ecoles').offset().top) {
                     $('#about-ecoles .about-icon-bar').css('max-width','100%')
+                }
+                if (scrollTopAdjusted >= $('#about-experiences').offset().top) {
+                    $('#about-experiences .about-icon-bar').css('max-width','100%')
                 }
                 if (scrollTopAdjusted >= $('#about-competences').offset().top) {
                     $('#about-competences .about-icon-bar').css('max-width','100%')

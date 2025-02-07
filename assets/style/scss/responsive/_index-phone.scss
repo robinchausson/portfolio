@@ -37,6 +37,9 @@
     .font-size-h2 {
         font-size: $font-size-h2!important;
     }
+    strong {
+        display: inline;
+    }
     .btn {
         a {
             padding: .7rem .85rem;
@@ -134,12 +137,19 @@
                         text-align: left;
                     }
 
+                    .about-desc {
+                        h2 {
+                            text-align: center;
+                            margin-bottom: 1.5rem;
+                        }
+                    }
+
                     .about-bar {
                         width: 100%;
 
                         flex-direction: row;
                         height: auto!important;
-                        margin-bottom: 2rem;
+                        margin-bottom: .8rem;
 
                         > div:nth-of-type(2) {
                             margin: 0 2rem;
@@ -149,7 +159,7 @@
                             transition: max-width 2s ease-out;
                             max-height: 0;
                             max-width: 0;
-                            width: 100%;
+                            width: 0;
                             height: 5px;
                         }
                         .about-icon-bar-icon {
@@ -158,7 +168,7 @@
                     }
                     .about-desc {
                         margin: 0!important;
-                        width: 100%;
+                        width: 100%!important;
 
                         .about-desc-header {
                             margin-bottom: .8rem;
@@ -176,18 +186,7 @@
                             text-indent: 1rem;
                         }
                         > div {
-                            justify-content: center;
-                            .about-points {
-                                > div {
-                                    height: .45rem;
-                                    width: .45rem;
-                                }
-                                p {
-                                    text-indent: 0;
-                                    font-size: $font-size-small-1;
-                                    margin-top: 0;
-                                }
-                            }
+                            justify-content: left!important;
                             h3 {
                                 width: 100%;
                                 text-align: center;
