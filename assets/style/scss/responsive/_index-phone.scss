@@ -132,6 +132,7 @@
                 margin-top: 3rem;
                 .about-item {
                     width: 100%;
+                    margin-bottom: 5rem;
 
                     &:nth-child(2n) {
                         text-align: left;
@@ -181,9 +182,6 @@
                                 text-align: left;
                                 margin-bottom: .5rem;
                             }
-                        }
-                        p {
-                            text-indent: 1rem;
                         }
                         > div {
                             justify-content: left!important;

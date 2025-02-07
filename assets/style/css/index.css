@@ -884,6 +884,7 @@ footer h6 {
   }
   section#about .main .about-item {
     width: 100%;
+    margin-bottom: 5rem;
   }
   section#about .main .about-item:nth-child(2n) {
     text-align: left;
@@ -925,9 +926,6 @@ footer h6 {
   section#about .main .about-item .about-desc .about-desc-header h3 {
     text-align: left;
     margin-bottom: 0.5rem;
-  }
-  section#about .main .about-item .about-desc p {
-    text-indent: 1rem;
   }
   section#about .main .about-item .about-desc > div {
     justify-content: left !important;
