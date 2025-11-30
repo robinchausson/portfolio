@@ -536,6 +536,12 @@ section#work .main .projets .projet .projet-body .projet-body-techno .couleur-bo
 section#work .main .projets .projet .projet-body .projet-body-techno .couleur-javascript {
   background-color: #aa9c1e;
 }
+section#work .main .projets .projet .projet-body .projet-body-techno .couleur-stripe {
+  background-color: #6355F7;
+}
+section#work .main .projets .projet .projet-body .projet-body-techno .couleur-mondialrelay {
+  background-color: #B62A4A;
+}
 section#contact .main {
   margin-top: 1.5rem;
 }
