@@ -254,8 +254,11 @@ section {
             h1 {
                 margin-bottom: 2.5rem;
                 animation: fontSizeH1 1s 2s forwards;
+                
                 span {
                     position: relative;
+                    display: inline-block;
+
                     &:after{
                         position: absolute;
                         content: '';
@@ -282,23 +285,28 @@ section {
                 font-size: $font-size-h1;
                 span {
                     position: relative;
+                    display: inline-block;
+
                     &:after{
                         position: absolute;
                         content: '';
                         left: -2%;
                         top: 50%;
                         transform: translateY(-50%);
-                        height: 100%;
+                        height: 110%;
                         width: 105%;
                         background-color: $default-bg;
                     }
                     &:nth-of-type(1)::after {
+                        z-index: 5;
                         animation: textReveal 1.2s 2.5s forwards;
                     }
                     &:nth-of-type(2)::after {
+                        z-index: 4;
                         animation: textReveal 1.2s 3s forwards;
                     }
                     &:nth-of-type(3)::after {
+                        z-index: 2;
                         animation: textReveal 1.2s 3.5s forwards;
                     }
                 }
@@ -434,13 +442,10 @@ section {
 
                     h3 {
                         margin-bottom: .7rem;
+                        width: 100%;
                     }
                     p {
                         margin-top: .5rem;
-
-                        &:nth-of-type(1) {
-                           margin-top: 0;
-                        }
                     }
 
                     
@@ -449,10 +454,6 @@ section {
                         transition: .6s .2s ease;
                         transform: translateX(10%);
                         opacity: 0;
-
-                        &:last-of-type {
-                            margin: 0;
-                        }
                     }
                     .about-desc-experiences {
                         margin-bottom: 1.4rem;
@@ -460,9 +461,6 @@ section {
                         transform: translateX(-10%);
                         opacity: 0;
 
-                        &:last-of-type {
-                            margin: 0;
-                        }
                     }
                     
                     > div {

@@ -233,6 +233,7 @@ section#home .main h1 {
 }
 section#home .main h1 span {
   position: relative;
+  display: inline-block;
 }
 section#home .main h1 span:after {
   position: absolute;
@@ -259,6 +260,7 @@ section#home .main h2 {
 }
 section#home .main h2 span {
   position: relative;
+  display: inline-block;
 }
 section#home .main h2 span:after {
   position: absolute;
@@ -266,17 +268,20 @@ section#home .main h2 span:after {
   left: -2%;
   top: 50%;
   transform: translateY(-50%);
-  height: 100%;
+  height: 110%;
   width: 105%;
   background-color: #0d1b2a;
 }
 section#home .main h2 span:nth-of-type(1)::after {
+  z-index: 5;
   animation: textReveal 1.2s 2.5s forwards;
 }
 section#home .main h2 span:nth-of-type(2)::after {
+  z-index: 4;
   animation: textReveal 1.2s 3s forwards;
 }
 section#home .main h2 span:nth-of-type(3)::after {
+  z-index: 2;
   animation: textReveal 1.2s 3.5s forwards;
 }
 section#home .main .btn {
@@ -391,12 +396,10 @@ section#about .main .about-item .about-desc .about-desc-header .about-desc-date 
 }
 section#about .main .about-item .about-desc h3 {
   margin-bottom: 0.7rem;
+  width: 100%;
 }
 section#about .main .about-item .about-desc p {
   margin-top: 0.5rem;
-}
-section#about .main .about-item .about-desc p:nth-of-type(1) {
-  margin-top: 0;
 }
 section#about .main .about-item .about-desc .about-desc-ecole, section#about .main .about-item .about-desc .about-desc-competences {
   margin-bottom: 1.4rem;
@@ -404,17 +407,11 @@ section#about .main .about-item .about-desc .about-desc-ecole, section#about .ma
   transform: translateX(10%);
   opacity: 0;
 }
-section#about .main .about-item .about-desc .about-desc-ecole:last-of-type, section#about .main .about-item .about-desc .about-desc-competences:last-of-type {
-  margin: 0;
-}
 section#about .main .about-item .about-desc .about-desc-experiences {
   margin-bottom: 1.4rem;
   transition: 0.6s 0.2s ease;
   transform: translateX(-10%);
   opacity: 0;
-}
-section#about .main .about-item .about-desc .about-desc-experiences:last-of-type {
-  margin: 0;
 }
 section#about .main .about-item .about-desc > div {
   display: flex;
